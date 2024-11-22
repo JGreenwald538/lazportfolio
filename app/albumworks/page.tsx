@@ -1,5 +1,5 @@
-import ImagePoster from "./components/ImagePoster";
-import Sidebar from "./components/Sidebar";
+import ImagePoster from "../components/ImagePoster";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
 	return (
