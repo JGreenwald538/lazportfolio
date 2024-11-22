@@ -1,11 +1,17 @@
 import Link from "next/link";
 
-export default function Home({borderColor} : {borderColor: string}) {
-    const border = `border-r-${borderColor}-400`;
-    console.log(border)
+const borderClasses: { [key: string]: string } = {
+	yellow: "border-r-yellow-400",
+	red: "border-r-red-400",
+	blue: "border-r-blue-400",
+};
+
+export default function Home({ borderColor }: { borderColor: string }) {
+	const borderClass = borderClasses[borderColor] || "border-r-gray-400";
+
 	return (
 		<div
-			className={`h-screen w-fit ${border} border-r-2 py-4 pl-4 pr-10 flex flex-col sticky top-0 bg-slate-900`}
+			className={`h-screen w-fit ${borderClass} border-r-2 py-4 pl-4 pr-10 flex flex-col sticky top-0 bg-slate-900`}
 		>
 			<div className="flex flex-col mb-4">
 				<div className="rounded-full border-white border-2 w-20 h-20 flex justify-center items-center">
