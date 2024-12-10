@@ -1,38 +1,78 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 import Image from "next/image";
 
-const images = ["https://via.placeholder.com/600"];
+const images = [
+	"bad.pollen.04.jpg",
+	"Duolingo.horror.green.jpg",
+	"Duolingo.horror.red.2.jpg",
+	"Duolingo.horror.vintage.2.jpg",
+	"face.demons.black.jpg",
+	"face.demons.halfred.jpg",
+	"face.demons.RED.jpg",
+	"geico.car.ad.03.jpg",
+	"hikingvwalking copy.jpg",
+	"look.both.ways.2.jpg",
+	"look.both.ways.jpg",
+	"NRA.Ad.04.jpg",
+	"Sharp.Cactus.16.jpg",
+	"skiers.16.ets.jpg",
+	"thathill.design2.jpg",
+	"trysleeping.02.jpg",
+	"Unknown.16.ets.jpg",
+	"walk.the.walk.2.jpg",
+	"walk.the.walk.jpg",
+	"yellowstone.simple2.jpg",
+];
+
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [photoIndex, setPhotoIndex] = useState(0);
+	const [shownImage, setShownImage] = useState(images[0]);
+	const actionRef = useRef<VoidFunction | null>(null); // Use a ref to hold the latest action
+	const imagePosters: React.JSX.Element[] = [];
+
+	for (const image in images) {
+		imagePosters.push(
+			<ImagePoster
+				imageSource={"/Posters/" + images[image]}
+				key={image}
+				onClick={() => {
+					setIsOpen(true);
+					const closing = () => {
+						setIsOpen(false);
+					};
+					actionRef.current = closing;
+					setShownImage(images[image]);
+					console.log("/Posters/" + shownImage);
+				}}
+			></ImagePoster>
+		);
+	}
+
+	useEffect(() => {
+		function onKeyup(e: { key: string }) {
+			if (e.key === "Escape" && actionRef.current) {
+				actionRef.current();
+			}
+		}
+
+		window.addEventListener("keyup", onKeyup);
+		return () => window.removeEventListener("keyup", onKeyup);
+	}, []);
+
 	return (
 		<div className="flex flex-row">
 			<Sidebar screen="posters" />
-			<div className="grid grid-cols-3 gap-10 w-full h-fit mt-14 mx-10">
-				<ImagePoster
-					onClick={() => {
-						setIsOpen(true);
-					}}
-				/>
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
-				<ImagePoster />
+			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 mx-10 align-center">
+				{imagePosters}
 			</div>
 			{isOpen && (
 				<div className="absolute">
-					<div className="sticky w-screen h-screen px-24 py-10 top-0 z-20 ">
+					<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 ">
 						<button
 							onClick={() => {
 								setIsOpen(false);
@@ -40,11 +80,11 @@ export default function Home() {
 							className="w-screen h-screen -z-10 bg-black/80 absolute top-0 -ml-24"
 						></button>
 						<Image
-							src={"/typography.png"}
+							src={"/Posters/" + shownImage}
 							alt=""
-							width={4000}
-							height={4000}
-							className="w-full h-full rounded-3xl border-2 border-white"
+							width={10000}
+							height={10000}
+							className="w-fit h-fit max-h-screen max-w-screen-sm rounded-3xl border-2 border-white object-scale-down mx-auto my-auto"
 						/>
 					</div>
 				</div>
