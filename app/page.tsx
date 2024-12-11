@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import ImagePoster from "./components/ImagePoster";
 import Sidebar from "./components/Sidebar";
-import Image from "next/image";
 import FullscreenPosters from "./components/FullscreenPosters";
 
 const images = [
