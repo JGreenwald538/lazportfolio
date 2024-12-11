@@ -8,4 +8,4 @@ services:
     volumes:
       - .:/app       # Mount the current directory to /app in the container
       - /app/node_modules  # Prevent overwriting node_modules with host files
-    command: npm run lint
+    command: npm run dev

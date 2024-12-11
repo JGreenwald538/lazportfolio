@@ -17,9 +17,9 @@ export default function Sidebar({ screen }: { screen: string }) {
 			className={`h-screen w-fit ${borderClass} py-4 pl-6 pr-12 flex flex-col sticky top-0 bg-slate-950 border-r-4 mr-4 `}
 		>
 			<div className="flex flex-col mb-4">
-				<div className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5">
+				<Link className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5" href={"/aboutMe"}>
 					<Image src={"/logo.png"} alt={"Logo"} width={4000} height={4000} />
-				</div>
+				</Link>
 				<div className="text-xl mt-2 font-bold">Lazar</div>
 				<div className="font-bold text-xl">Racusin</div>
 			</div>
