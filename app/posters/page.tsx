@@ -72,19 +72,19 @@ export default function Home() {
 			</div>
 			{isOpen && (
 				<div className="absolute">
-					<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 ">
+					<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 flex items-center justify-center">
 						<button
 							onClick={() => {
 								setIsOpen(false);
 							}}
-							className="w-screen h-screen -z-10 bg-black/80 absolute top-0 -ml-24"
+							className="w-screen h-screen -z-10 bg-black/80 absolute top-0 "
 						></button>
 						<Image
 							src={"/Posters/" + shownImage}
 							alt=""
 							width={10000}
 							height={10000}
-							className="w-fit h-fit max-h-screen max-w-screen-sm rounded-3xl border-2 border-white object-scale-down mx-auto my-auto"
+							className="w-fill h-fill max-h-[90vh] max-w-screen-sm rounded-3xl border-2 border-white object-scale-down"
 						/>
 					</div>
 				</div>
