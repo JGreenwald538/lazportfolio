@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
-import Image from "next/image";
+import FullscreenPosters from "../components/FullscreenPosters";
 
 const images = [
 	"atlantis copy.jpg",
@@ -61,23 +61,11 @@ export default function Home() {
 				{imagePosters}
 			</div>
 			{isOpen && (
-				<div className="absolute">
-					<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 ">
-						<button
-							onClick={() => {
-								setIsOpen(false);
-							}}
-							className="w-screen h-screen -z-10 bg-black/80 absolute top-0 -ml-24"
-						></button>
-						<Image
-							src={"/AlbumCovers/" + shownImage}
-							alt=""
-							width={10000}
-							height={10000}
-							className="w-fit h-fit max-h-screen max-w-screen-sm rounded-3xl border-2 border-white object-scale-down mx-auto my-auto"
-						/>
-					</div>
-				</div>
+				<FullscreenPosters
+					srcFolder="AlbumCovers"
+					shownImage={shownImage}
+					setIsOpen={setIsOpen}
+				/>
 			)}
 		</div>
 	);

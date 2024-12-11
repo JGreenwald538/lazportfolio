@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Arboria-Book';
+  src: url('./fonts/Arboria-Book.woff2') format('woff2');
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

@@ -4,23 +4,25 @@ import { useEffect, useRef, useState } from "react";
 import ImagePoster from "./components/ImagePoster";
 import Sidebar from "./components/Sidebar";
 import Image from "next/image";
+import FullscreenPosters from "./components/FullscreenPosters";
 
 const images = [
-	"Artboard.8.2insta.jpg",
-	"Artboard.8.3insta.jpg",
-	"Artboard.8.insta.jpg",
+	{source: "Artboard.8.2insta.jpg", description: "This is a personal branding project that was designed for a fictional food truck business. Using Adobe Illustrator and then Photoshop for the mockups, I created a simple brand package for Urban Bites."},
+	{source: "Artboard.8.3insta.jpg", description: undefined},
+	{source: "Artboard.8.insta.jpg", description: undefined},
 ];
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [shownImage, setShownImage] = useState(images[0]);
+	const [shownImage, setShownImage] = useState(images[0].source);
 	const actionRef = useRef<VoidFunction | null>(null); // Use a ref to hold the latest action
 	const imagePosters: React.JSX.Element[] = [];
+	const [description, setDescription] = useState<string | undefined>(undefined)
 
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
-				imageSource={"/LogoBranding/" + images[image]}
+				imageSource={"/LogoBranding/" + images[image].source}
 				key={image}
 				onClick={() => {
 					setIsOpen(true);
@@ -28,8 +30,8 @@ export default function Home() {
 						setIsOpen(false);
 					};
 					actionRef.current = closing;
-					setShownImage(images[image]);
-					console.log("/LogoBranding/" + shownImage);
+					setShownImage(images[image].source);
+					setDescription(images[image].description)
 				}}
 			></ImagePoster>
 		);
@@ -53,23 +55,7 @@ export default function Home() {
 				{imagePosters}
 			</div>
 			{isOpen && (
-				<div className="absolute">
-					<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 ">
-						<button
-							onClick={() => {
-								setIsOpen(false);
-							}}
-							className="w-screen h-screen -z-10 bg-black/80 absolute top-0 -ml-24"
-						></button>
-						<Image
-							src={"/LogoBranding/" + shownImage}
-							alt=""
-							width={10000}
-							height={10000}
-							className="w-fit h-fit max-h-screen max-w-screen-sm rounded-3xl border-2 border-white object-scale-down mx-auto my-auto"
-						/>
-					</div>
-				</div>
+				<FullscreenPosters srcFolder="LogoBranding" shownImage={shownImage} setIsOpen={setIsOpen} description={description} />
 			)}
 		</div>
 	);
