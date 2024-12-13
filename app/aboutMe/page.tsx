@@ -13,7 +13,7 @@ export default function Home() {
 				height={4000}
 				className="object-scale-down md:w-1/3 w-3/4 md:ml-10 md:mt-0 mt-6"
 			/>
-			<div className="md:ml-8 md:my-0 my-4 md:h-screen flex flex-col justify-center md:w-1/3 w-3/4">
+			<div className="md:ml-8 md:my-0 my-4 md:h-screen flex flex-col justify-center md:w-1/3 w-3/4 md:items-baseline items-center">
 				<div className="font-semibold mb-4">
 					{`Laz is currently a student at Rochester Institute of Technology (RIT). Studying Advertising and Public Relations Bachelor of Science`}
 				</div>

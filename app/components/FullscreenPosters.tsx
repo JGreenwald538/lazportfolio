@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
+
 
 export default function FullscreenPosters({
 	srcFolder,
@@ -49,37 +51,27 @@ export default function FullscreenPosters({
 						className="w-fill h-fill -z-10 absolute top-0"
 					></button>
 				</div>
-				{typeof shownImage === "object" && currentImage > 0 && (
+				{/* {typeof shownImage === "object" && currentImage > 0 && (
 					<button
-						className="absolute w-12 left-12 md:bottom-auto md:top-auto bottom-44 "
+						className="absolute w-12 left-12 md:bottom-auto bottom-44 "
 						onClick={() => {
 							setCurrentImage(currentImage - 1);
 						}}
 					>
-						<Image
-							src={"/leftArrow.png"}
-							alt={"Left arrow"}
-							width={4000}
-							height={4000}
-						/>
+						<FaCircleChevronLeft size={30} />
 					</button>
 				)}
 				{typeof shownImage === "object" &&
 					currentImage < shownImage.length - 1 && (
 						<button
-							className="absolute w-12 right-12"
+							className="absolute w-12 right-12 md:bottom-auto bottom-44"
 							onClick={() => {
 								setCurrentImage(currentImage + 1);
 							}}
 						>
-							<Image
-								src={"/rightArrow.png"}
-								alt={"Right arrow"}
-								width={4000}
-								height={4000}
-							/>
+							<FaCircleChevronRight size={30} />
 						</button>
-					)}
+					)} */}
 			</div>
 		</div>
 	);

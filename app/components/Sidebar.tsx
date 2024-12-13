@@ -17,7 +17,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 	const borderClass = borderClasses[screen] || "border-r-gray-400";
 	return (
 		<div
-			className={`md:h-screen md:w-fit h-fit w-screen ${borderClass} md:py-4 pb-4 pl-6 md:pr-12 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-4 z-10`}
+			className={`md:h-screen md:w-fit h-fit w-screen ${borderClass} md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 md:mr-4 mr-0 z-10`}
 		>
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center justify-center">
 				<Link
@@ -79,7 +79,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 					About Me
 				</Link>
 			</div>
-			<div className="flex md:flex-col flex-row">
+			<div className="flex flex-col">
 				<button className="flex flex-row items-center" onClick={() => {
 					navigator.clipboard.writeText("lazardesigns11@gmail.com");
 					alert("Emailed copied")

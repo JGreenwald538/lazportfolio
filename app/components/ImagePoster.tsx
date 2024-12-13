@@ -28,7 +28,7 @@ export default function Home({onClick, imageSource}: {onClick?: VoidFunction, im
 						alt={"Gallery View Icon"}
 						width={4000}
 						height={4000}
-						className="relative bottom-16 object-scale-down w-16 opacity-60"
+						className="relative bottom-16 object-scale-down w-16 opacity-80"
 					></Image>
 				)}
 			</button>
