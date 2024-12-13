@@ -60,7 +60,7 @@ export default function Home() {
 			<Sidebar screen="albumcovers" />
 			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
-				<ImagePoster
+				{/* <ImagePoster
 					imageSource={[
 						{ source: "/typography.png", description: undefined },
 						{ source: "/logo.png", description: undefined },
@@ -72,7 +72,7 @@ export default function Home() {
 						]);
 						setIsOpen(true);
 					}}
-				/>
+				/> */}
 			</div>
 			{isOpen && (
 				<FullscreenPosters
