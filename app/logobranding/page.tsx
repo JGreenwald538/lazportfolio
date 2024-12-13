@@ -25,7 +25,7 @@ export default function Home() {
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
-				imageSource={"/LogoBranding/" + images[image].source}
+				imageSource={images[image].source}
 				key={image}
 				onClick={() => {
 					setIsOpen(true);
@@ -36,6 +36,7 @@ export default function Home() {
 					setShownImage(images[image].source);
 					setDescription(images[image].description);
 				}}
+				srcFolder="LogoBranding"
 			></ImagePoster>
 		);
 	}

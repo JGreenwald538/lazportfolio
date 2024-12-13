@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
-
 export default function FullscreenPosters({
 	srcFolder,
 	shownImage,
@@ -14,7 +13,7 @@ export default function FullscreenPosters({
 	setIsOpen: (arg0: boolean) => void;
 	description?: string;
 }) {
-	const [currentImage, setCurrentImage] = useState(0)
+	const [currentImage, setCurrentImage] = useState(0);
 	return (
 		<div className="absolute">
 			<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 flex items-center justify-center">
@@ -37,19 +36,13 @@ export default function FullscreenPosters({
 						alt=""
 						width={10000}
 						height={10000}
-						className="w-fill h-fill max-h-[90vh] max-w-[90vw] rounded-xl object-scale-down"
+						className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
 					/>
 					{description && (
-						<div className="p-2 h-fit md:w-1/2 w-3/4 md:ml-10 md:text-3xl md:mt-0 mt-10 text-md border-white rounded-md border-2">
+						<div className="p-2 h-fit md:w-1/2 w-1/2 md:ml-10 md:text-3xl md:mt-0 mt-10 text-md border-white rounded-md border-2">
 							{description}
 						</div>
 					)}
-					<button
-						onClick={() => {
-							setIsOpen(false);
-						}}
-						className="w-fill h-fill -z-10 absolute top-0"
-					></button>
 				</div>
 				{typeof shownImage === "object" && currentImage > 0 && (
 					<button

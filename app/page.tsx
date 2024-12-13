@@ -29,7 +29,7 @@ export default function Home() {
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
-				imageSource={"/AlbumCovers/" + images[image]}
+				imageSource={images[image]}
 				key={image}
 				onClick={() => {
 					setIsOpen(true);
@@ -40,6 +40,7 @@ export default function Home() {
 					setShownImage(images[image]);
 					console.log("/AlbumCovers/" + shownImage);
 				}}
+				srcFolder="AlbumCovers"
 			></ImagePoster>
 		);
 	}

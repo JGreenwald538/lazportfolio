@@ -9,9 +9,9 @@ const images = [
 	"bad.pollen.04.jpg",
 	"geico.car.ad.03.jpg",
 	"look.both.ways.2.jpg",
-	"Duolingo.horror.green.jpg",
-	"Duolingo.horror.red.2.jpg",
-	"Duolingo.horror.vintage.2.jpg",
+	[{source: "Duolingo.horror.green.jpg", description: undefined},
+	{source: "Duolingo.horror.red.2.jpg", description: undefined},
+	{source: "Duolingo.horror.vintage.2.jpg", description: undefined}],
 	"NRA.Ad.03.jpg",
 	"face.demons.RED.jpg",
 	"face.demons.halfred.jpg",
@@ -36,21 +36,39 @@ export default function Home() {
 	const imagePosters: React.JSX.Element[] = [];
 
 	for (const image in images) {
-		imagePosters.push(
-			<ImagePoster
-				imageSource={"/Posters/" + images[image]}
-				key={image}
-				onClick={() => {
-					setIsOpen(true);
-					const closing = () => {
-						setIsOpen(false);
-					};
-					actionRef.current = closing;
-					setShownImage(images[image]);
-					console.log("/Posters/" + shownImage);
-				}}
-			></ImagePoster>
-		);
+		if (typeof images[image] == "string") {
+			imagePosters.push(
+				<ImagePoster
+					imageSource={images[image]}
+					key={image}
+					onClick={() => {
+						setIsOpen(true);
+						const closing = () => {
+							setIsOpen(false);
+						};
+						actionRef.current = closing;
+						setShownImage(images[image]);
+					}}
+					srcFolder="Posters"
+				></ImagePoster>
+			);
+		} else {
+			imagePosters.push(
+				<ImagePoster
+					imageSource={images[image]}
+					key={image}
+					onClick={() => {
+						setIsOpen(true);
+						const closing = () => {
+							setIsOpen(false);
+						};
+						actionRef.current = closing;
+						setShownImage(images[image]);
+					}}
+					srcFolder="Posters"
+				></ImagePoster>
+			);
+		}
 	}
 
 	useEffect(() => {

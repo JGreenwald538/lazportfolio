@@ -32,7 +32,7 @@ export default function Home() {
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
-				imageSource={"/ArtistWork/" + images[image]}
+				imageSource={images[image]}
 				key={image}
 				onClick={() => {
 					setIsOpen(true);
@@ -41,8 +41,8 @@ export default function Home() {
 					};
 					actionRef.current = closing;
 					setShownImage(images[image]);
-					console.log("/ArtistWork/" + shownImage);
 				}}
+				srcFolder="ArtistWork"
 			></ImagePoster>
 		);
 	}
