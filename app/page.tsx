@@ -6,22 +6,30 @@ import Sidebar from "./components/Sidebar";
 import FullscreenPosters from "./components/FullscreenPosters";
 
 const images = [
-	{source: "Artboard.8.2insta.jpg", description: "This is a personal branding project that was designed for a fictional food truck business. Using Adobe Illustrator and then Photoshop for the mockups, I created a simple brand package for Urban Bites."},
-	{source: "Artboard.8.3insta.jpg", description: undefined},
-	{source: "Artboard.8.insta.jpg", description: undefined},
+	"shine.tracklist.2.jpg",
+	"not.if.when.tracklist.jpg",
+	"brownboy.02.jpg",
+	"pressure.01 copy.jpg",
+	"itllshine.3.jpg",
+	"yachtside.2.jpg",
+	"Born.Crash copy.jpg",
+	"atlantis copy.jpg",
+	"sun roof.jpg",
 ];
+
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [shownImage, setShownImage] = useState(images[0].source);
+	const [shownImage, setShownImage] = useState<
+		string | { source: string; description: string | undefined }[]
+	>(images[0]);
 	const actionRef = useRef<VoidFunction | null>(null); // Use a ref to hold the latest action
 	const imagePosters: React.JSX.Element[] = [];
-	const [description, setDescription] = useState<string | undefined>(undefined)
 
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
-				imageSource={"/LogoBranding/" + images[image].source}
+				imageSource={"/AlbumCovers/" + images[image]}
 				key={image}
 				onClick={() => {
 					setIsOpen(true);
@@ -29,8 +37,8 @@ export default function Home() {
 						setIsOpen(false);
 					};
 					actionRef.current = closing;
-					setShownImage(images[image].source);
-					setDescription(images[image].description)
+					setShownImage(images[image]);
+					console.log("/AlbumCovers/" + shownImage);
 				}}
 			></ImagePoster>
 		);
@@ -48,13 +56,30 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="flex flex-row">
-			<Sidebar screen="logoBranding" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 mx-10 align-center">
+		<div className="flex md:flex-row flex-col">
+			<Sidebar screen="albumcovers" />
+			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
+				<ImagePoster
+					imageSource={[
+						{ source: "/typography.png", description: undefined },
+						{ source: "/logo.png", description: undefined },
+					]}
+					onClick={() => {
+						setShownImage([
+							{ source: "brownboy.02.jpg", description: undefined },
+							{ source: "not.if.when.tracklist.jpg", description: undefined },
+						]);
+						setIsOpen(true);
+					}}
+				/>
 			</div>
 			{isOpen && (
-				<FullscreenPosters srcFolder="LogoBranding" shownImage={shownImage} setIsOpen={setIsOpen} description={description} />
+				<FullscreenPosters
+					srcFolder="AlbumCovers"
+					shownImage={shownImage}
+					setIsOpen={setIsOpen}
+				/>
 			)}
 		</div>
 	);

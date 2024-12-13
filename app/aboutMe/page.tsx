@@ -4,16 +4,16 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<div className="flex flex-row">
+		<div className="flex md:flex-row flex-col md:justify-normal items-center">
 			<Sidebar screen="aboutMe" />
 			<Image
 				src={"/aboutMePic.jpeg"}
 				alt={"pic"}
 				width={4000}
 				height={4000}
-				className="object-scale-down w-1/3 ml-10"
+				className="object-scale-down md:w-1/3 w-3/4 md:ml-10 md:mt-0 mt-6"
 			/>
-			<div className="ml-8 h-screen flex flex-col	justify-center w-1/3">
+			<div className="md:ml-8 md:my-0 my-4 md:h-screen flex flex-col justify-center md:w-1/3 w-3/4">
 				<div className="font-semibold mb-4">
 					{`Laz is currently a student at Rochester Institute of Technology (RIT). Studying Advertising and Public Relations Bachelor of Science`}
 				</div>
@@ -25,7 +25,13 @@ export default function Home() {
 					href={"https://www.linkedin.com/in/lazar-racusin/"}
 					target="_blank"
 				>
-					<Image src={"/LinkedIn_2021.svg.png"} alt={"LinkedIn Logo"} width={4000} height={4000} className="object-scale-down w-24" />
+					<Image
+						src={"/LinkedIn_2021.svg.png"}
+						alt={"LinkedIn Logo"}
+						width={4000}
+						height={4000}
+						className="object-scale-down w-24"
+					/>
 				</Link>
 				<Link className="mt-4 text-blue-400" href={"/resume"} target="_blank">
 					View Resume

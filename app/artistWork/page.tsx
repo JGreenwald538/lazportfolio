@@ -6,17 +6,22 @@ import Sidebar from "../components/Sidebar";
 import FullscreenPosters from "../components/FullscreenPosters";
 
 const images = [
-	"because.internet.04.jpg",
 	"Chroma mirror 4.jpg",
-	"Chroma.green.2.jpg",
-	"florida.queen.bee.beige.jpg",
 	"florida.queen.bee.purple.jpg",
-	"not if bridge green 1.jpg",
-	"poster.utopia.02.jpg",
+	"florida.queen.bee.beige.jpg",
 	"rockman.jpg",
 	"Shine.Poster.1.jpg",
+	"because.internet.04.jpg",
+	"poster.utopia.02.jpg",
+	"not if bridge green 1.jpg",
+	"Chroma.green.2.jpg",
+	"Ashine.vinyl.1.jpg",
+	"Bbrownboy.ig.2.jpg",
+	"Cboth.ways.poster.mockup2.jpg",
+	"Dswingers.mockup.jpg",
+	"EPressure.Vinyl.jpg",
+	"Fbrownboy.ig.1.jpg"
 ];
-
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +59,9 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="flex flex-row">
+		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="artistWork" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 mx-10 align-center">
+			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
 			</div>
 			{isOpen && (

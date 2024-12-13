@@ -1,37 +1,44 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FaInstagram } from "react-icons/fa";
 
 const borderClasses: { [key: string]: string } = {
-	artistWork: "border-r-[#ffc176]",
-	posters: "border-r-[#466995]",
-	albumcovers: "border-r-[#ACD2ED]",
-	logoBranding: "border-r-[#4C9459]",
-	aboutMe: "border-r-[#840032]",
+	artistWork: "md:border-r-[#ffc176] border-b-[#ffc176]",
+	posters: "md:border-r-[#466995] border-b-[#466995]",
+	albumcovers: "md:border-r-[#ACD2ED] border-b-[#ACD2ED]",
+	logoBranding: "md:border-r-[#4C9459] border-b-[#4C9459]",
+	aboutMe: "md:border-r-[#840032] border-b-[#840032]",
 };
 
 export default function Sidebar({ screen }: { screen: string }) {
 	const borderClass = borderClasses[screen] || "border-r-gray-400";
-	console.log(screen)
 	return (
 		<div
-			className={`h-screen w-fit ${borderClass} py-4 pl-6 pr-12 flex flex-col sticky top-0 bg-slate-950 border-r-4 mr-4 `}
+			className={`md:h-screen md:w-fit h-fit w-screen ${borderClass} md:py-4 pb-4 pl-6 md:pr-12 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-4 z-10`}
 		>
-			<div className="flex flex-col mb-4">
-				<Link className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5" href={"/aboutMe"}>
+			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center justify-center">
+				<Link
+					className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5"
+					href={"/aboutMe"}
+				>
 					<Image src={"/logo.png"} alt={"Logo"} width={4000} height={4000} />
 				</Link>
-				<div className="text-xl mt-2 font-bold">Lazar</div>
-				<div className="font-bold text-xl">Racusin</div>
+				<div className="text-xl md:ml-0 ml-2 md:mt-2 mt-5 font-bold">Lazar</div>
+				<div className="font-bold md:mt-0 mt-5 text-xl md:ml-0 ml-2">
+					Racusin
+				</div>
 			</div>
-			<div className="flex-grow flex flex-col justify-center items-start space-y-2 min-w-fit whitespace-nowrap">
+			<div className="md:flex-grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
 				<Link
-					href={"/albumcovers"}
+					href={"/"}
 					className={`${
 						screen === "albumcovers" ? "text-[#ACD2ED]" : "hover:text-[#ACD2ED]"
 					}`}
 				>
 					Album Covers
 				</Link>
+				<div className="inline md:hidden">|</div>
 				<Link
 					href={"/posters"}
 					className={`${
@@ -40,8 +47,9 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					Posters
 				</Link>
+				<div className="inline md:hidden">|</div>
 				<Link
-					href={"/"}
+					href={"/logobranding"}
 					className={`${
 						screen === "logoBranding"
 							? "text-[#4C9459]"
@@ -50,6 +58,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					Logo & Branding
 				</Link>
+				<div className="inline md:hidden">|</div>
 				<Link
 					href={"/artistWork"}
 					className={`${
@@ -58,6 +67,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					Artist Work
 				</Link>
+				<div className="inline md:hidden">|</div>
 				<Link
 					href={"/aboutMe"}
 					className={`${
@@ -66,6 +76,16 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					About Me
 				</Link>
+			</div>
+			<div className="flex md:flex-col flex-row">
+				<div className="flex flex-row items-center">
+					<MdOutlineMailOutline />
+					<div className="ml-1">lazardesigns11@gmail.com</div>
+				</div>
+				<div className="flex flex-row items-center">
+					<FaInstagram />
+					<div className="ml-1">@lazardesigns</div>
+				</div>
 			</div>
 		</div>
 	);
