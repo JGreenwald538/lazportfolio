@@ -51,7 +51,7 @@ export default function FullscreenPosters({
 						className="w-fill h-fill -z-10 absolute top-0"
 					></button>
 				</div>
-				{/* {typeof shownImage === "object" && currentImage > 0 && (
+				{typeof shownImage === "object" && currentImage > 0 && (
 					<button
 						className="absolute w-12 left-12 md:bottom-auto bottom-44 "
 						onClick={() => {
@@ -71,7 +71,7 @@ export default function FullscreenPosters({
 						>
 							<FaCircleChevronRight size={30} />
 						</button>
-					)} */}
+					)}
 			</div>
 		</div>
 	);
