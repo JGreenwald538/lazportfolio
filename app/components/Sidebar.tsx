@@ -78,14 +78,21 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 			</div>
 			<div className="flex md:flex-col flex-row">
-				<div className="flex flex-row items-center">
+				<button className="flex flex-row items-center" onClick={() => {
+					navigator.clipboard.writeText("lazardesigns11@gmail.com");
+					alert("Emailed copied")
+				}}>
 					<MdOutlineMailOutline />
 					<div className="ml-1">lazardesigns11@gmail.com</div>
-				</div>
-				<div className="flex flex-row items-center">
+				</button>
+				<Link
+					className="flex flex-row items-center"
+					href={"https://www.instagram.com/lazardesigns_/"}
+					target="_blank"
+				>
 					<FaInstagram />
-					<div className="ml-1">@lazardesigns</div>
-				</div>
+					<div className="ml-1">@lazardesigns_</div>
+				</Link>
 			</div>
 		</div>
 	);
