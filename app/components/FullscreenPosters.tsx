@@ -14,6 +14,21 @@ export default function FullscreenPosters({
 	description?: string;
 }) {
 	const [currentImage, setCurrentImage] = useState(0);
+	const images = []
+	if(typeof shownImage === "object"){
+		for (const image in shownImage) {
+			images.push(
+				<Image
+					src={"/" + srcFolder + "/" + shownImage[image].source}
+					alt={""}
+					width={10000}
+					height={10000}
+					className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
+				></Image>
+			);
+		}
+	}
+	
 	return (
 		<div className="absolute">
 			<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 flex items-center justify-center">
@@ -24,22 +39,21 @@ export default function FullscreenPosters({
 					className="w-screen h-screen -z-10 bg-black/80 absolute top-0"
 				></button>
 				<div className="flex md:flex-row flex-col items-center">
-					<Image
+					{typeof shownImage == "string" && <Image
 						src={
 							"/" +
 							srcFolder +
 							"/" +
-							(typeof shownImage == "string"
-								? shownImage
-								: shownImage[currentImage].source)
+							shownImage
 						}
 						alt=""
 						width={10000}
 						height={10000}
 						className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
-					/>
+					/>}
+					{typeof shownImage == "object" && images[currentImage]}
 					{description && (
-						<div className="p-2 h-fit md:w-1/2 w-1/2 md:ml-10 md:text-3xl md:mt-0 mt-10 text-md border-white rounded-md border-2">
+						<div className="p-2 h-fit md:w-1/2 w-1/2 md:ml-10 md:text-3xl md:mt-0 mt-10 text-md border-white rounded-md border-2 flex flex-col">
 							{description}
 						</div>
 					)}

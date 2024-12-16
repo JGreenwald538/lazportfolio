@@ -55,7 +55,7 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="logoBranding" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 md:w-full h-fit my-8 mx-10 align-center">
+			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 md:w-full h-fit my-8 mx-10 align-center">
 				{imagePosters}
 			</div>
 			{isOpen && (

@@ -38,7 +38,6 @@ export default function Home() {
 					};
 					actionRef.current = closing;
 					setShownImage(images[image]);
-					console.log("/AlbumCovers/" + shownImage);
 				}}
 				srcFolder="AlbumCovers"
 			></ImagePoster>
@@ -59,21 +58,8 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="albumcovers" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
-				{/* <ImagePoster
-					imageSource={[
-						{ source: "/typography.png", description: undefined },
-						{ source: "/logo.png", description: undefined },
-					]}
-					onClick={() => {
-						setShownImage([
-							{ source: "brownboy.02.jpg", description: undefined },
-							{ source: "not.if.when.tracklist.jpg", description: undefined },
-						]);
-						setIsOpen(true);
-					}}
-				/> */}
 			</div>
 			{isOpen && (
 				<FullscreenPosters

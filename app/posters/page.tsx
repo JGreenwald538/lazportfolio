@@ -9,21 +9,27 @@ const images = [
 	"bad.pollen.04.jpg",
 	"geico.car.ad.03.jpg",
 	"look.both.ways.2.jpg",
-	[{source: "Duolingo.horror.green.jpg", description: undefined},
-	{source: "Duolingo.horror.red.2.jpg", description: undefined},
-	{source: "Duolingo.horror.vintage.2.jpg", description: undefined}],
+	[
+		{ source: "Duolingo.horror.green.jpg", description: undefined },
+		{ source: "Duolingo.horror.red.2.jpg", description: undefined },
+		{ source: "Duolingo.horror.vintage.2.jpg", description: undefined },
+	],
 	"NRA.Ad.03.jpg",
-	"face.demons.RED.jpg",
-	"face.demons.halfred.jpg",
-	"face.demons.black.jpg",
+	[
+		{ source: "face.demons.RED.jpg", description: undefined },
+		{ source: "face.demons.halfred.jpg", description: undefined },
+		{ source: "face.demons.black.jpg", description: undefined },
+	],
 	"Unknown.16.ets.jpg",
 	"skiers.16.ets.jpg",
 	"thathill.design2.jpg",
 	"hikingvwalking copy.jpg",
 	"Sharp.Cactus.16.jpg",
 	"trysleeping.02.jpg",
-	"walk.the.walk.jpg",
-	"walk.the.walk.2.jpg",
+	[
+		{ source: "walk.the.walk.jpg", description: undefined },
+		{ source: "walk.the.walk.2.jpg", description: undefined },
+	],
 	"yellowstone.simple2.jpg",
 ];
 
@@ -85,7 +91,7 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="posters" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
 			</div>
 			{isOpen && (

@@ -7,8 +7,10 @@ import FullscreenPosters from "../components/FullscreenPosters";
 
 const images = [
 	"Chroma mirror 4.jpg",
-	"florida.queen.bee.purple.jpg",
-	"florida.queen.bee.beige.jpg",
+	[
+		{ source: "florida.queen.bee.purple.jpg", description: undefined },
+		{ source: "florida.queen.bee.beige.jpg", description: undefined },
+	],
 	"rockman.jpg",
 	"Shine.Poster.1.jpg",
 	"because.internet.04.jpg",
@@ -20,7 +22,7 @@ const images = [
 	"Cboth.ways.poster.mockup2.jpg",
 	"Dswingers.mockup.jpg",
 	"EPressure.Vinyl.jpg",
-	"Fbrownboy.ig.1.jpg"
+	"Fbrownboy.ig.1.jpg",
 ];
 
 export default function Home() {
@@ -30,21 +32,39 @@ export default function Home() {
 	const imagePosters: React.JSX.Element[] = [];
 
 	for (const image in images) {
-		imagePosters.push(
-			<ImagePoster
-				imageSource={images[image]}
-				key={image}
-				onClick={() => {
-					setIsOpen(true);
-					const closing = () => {
-						setIsOpen(false);
-					};
-					actionRef.current = closing;
-					setShownImage(images[image]);
-				}}
-				srcFolder="ArtistWork"
-			></ImagePoster>
-		);
+		if (typeof images[image] == "string") {
+			imagePosters.push(
+				<ImagePoster
+					imageSource={images[image]}
+					key={image}
+					onClick={() => {
+						setIsOpen(true);
+						const closing = () => {
+							setIsOpen(false);
+						};
+						actionRef.current = closing;
+						setShownImage(images[image]);
+					}}
+					srcFolder="ArtistWork"
+				></ImagePoster>
+			);
+		} else {
+			imagePosters.push(
+				<ImagePoster
+					imageSource={images[image]}
+					key={image}
+					onClick={() => {
+						setIsOpen(true);
+						const closing = () => {
+							setIsOpen(false);
+						};
+						actionRef.current = closing;
+						setShownImage(images[image]);
+					}}
+					srcFolder="ArtistWork"
+				></ImagePoster>
+			);
+		}
 	}
 
 	useEffect(() => {
@@ -61,7 +81,7 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="artistWork" />
-			<div className="grid md:grid-cols-3 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
 				{imagePosters}
 			</div>
 			{isOpen && (
