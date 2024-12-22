@@ -79,11 +79,14 @@ export default function Sidebar({ screen }: { screen: string }) {
 					About Me
 				</Link>
 			</div>
-			<div className="flex flex-col">
-				<button className="flex flex-row items-center" onClick={() => {
-					navigator.clipboard.writeText("lazardesigns11@gmail.com");
-					alert("Email copied")
-				}}>
+			<div className="flex flex-col space-y-1">
+				<button
+					className="flex flex-row items-center"
+					onClick={() => {
+						navigator.clipboard.writeText("lazardesigns11@gmail.com");
+						alert("Email copied");
+					}}
+				>
 					<MdOutlineMailOutline />
 					<div className="ml-1">lazardesigns11@gmail.com</div>
 				</button>
@@ -94,6 +97,12 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					<FaInstagram />
 					<div className="ml-1">@lazardesigns_</div>
+				</Link>
+				<Link
+					href={"https://www.linkedin.com/in/jackgreenwald/"}
+					target="_blank"
+				>
+					<div>Made By Jack Greenwald</div>
 				</Link>
 			</div>
 		</div>
