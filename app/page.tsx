@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ImagePoster from "./components/ImagePoster";
 import Sidebar from "./components/Sidebar";
 import FullscreenPosters from "./components/FullscreenPosters";
+import Header from "./components/Header";
 
 const images = [
 	"shine.tracklist.2.jpg",
@@ -16,7 +17,6 @@ const images = [
 	"atlantis copy.jpg",
 	"sun roof.jpg",
 ];
-
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -58,8 +58,16 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="albumcovers" />
-			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
-				{imagePosters}
+			<div className="flex-col flex">
+				<Header
+					name="Album Covers"
+					description="This is a collection of Client and Personal projects that express my
+						love for music and creating something that portrays the music being
+						presented."
+				/>
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+					{imagePosters}
+				</div>
 			</div>
 			{isOpen && (
 				<FullscreenPosters

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
 import FullscreenPosters from "../components/FullscreenPosters";
+import Header from "../components/Header";
 
 const images = [
 	"Chroma mirror 4.jpg",
@@ -81,8 +82,14 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="artistWork" />
-			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
-				{imagePosters}
+			<div className="flex flex-col">
+				<Header
+					name="Artist Work"
+					description="A collection of client and personal projects. In a perfect world, my personal designs will be used by the artists themselves."
+				/>
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+					{imagePosters}
+				</div>
 			</div>
 			{isOpen && (
 				<FullscreenPosters

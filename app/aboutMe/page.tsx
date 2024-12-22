@@ -15,7 +15,7 @@ export default function Home() {
 			/>
 			<div className="md:ml-8 md:my-0 my-4 md:h-screen flex flex-col justify-center md:w-1/3 w-3/4 md:items-baseline items-center">
 				<div className="font-semibold mb-4">
-					{`Laz is currently a student at Rochester Institute of Technology (RIT). Studying Advertising and Public Relations Bachelor of Science`}
+					{`Laz is currently a student at Rochester Institute of Technology (RIT). Studying Advertising and Public Relations`}
 				</div>
 				<div>
 					{`With his love for creating graphics and posters, Laz created a freelance business “LazarDesigns” to showcase his client and personal projects. Enjoying music all his life, Laz loves to collaborate with artists ranging from album art for rap to rock. Starting with creating posters for local events, to creating album covers for verified artists, Laz is continuously growing his design skills and business ventures.`}

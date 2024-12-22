@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
 import FullscreenPosters from "../components/FullscreenPosters";
+import Header from "../components/Header";
 
 const images = [
 	"bad.pollen.04.jpg",
 	"geico.car.ad.03.jpg",
-	"look.both.ways.2.jpg",
+	"look.both.ways.jpg",
 	[
 		{ source: "Duolingo.horror.green.jpg", description: undefined },
 		{ source: "Duolingo.horror.red.2.jpg", description: undefined },
@@ -32,8 +33,6 @@ const images = [
 	],
 	"yellowstone.simple2.jpg",
 ];
-
-
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -91,8 +90,14 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="posters" />
-			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
-				{imagePosters}
+			<div className="flex flex-col">
+				<Header
+					name="Posters"
+					description="Sometimes a funny idea pops into my head and these posters are the result of that. The hardest part is finding the font."
+				/>
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+					{imagePosters}
+				</div>
 			</div>
 			{isOpen && (
 				<FullscreenPosters

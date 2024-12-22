@@ -38,7 +38,7 @@ export default function FullscreenPosters({
 					}}
 					className="w-screen h-screen -z-10 bg-black/80 absolute top-0"
 				></button>
-				<div className="flex md:flex-row flex-col items-center">
+				<div className="flex md:flex-row flex-col items-center justify-center">
 					{typeof shownImage == "string" && <Image
 						src={
 							"/" +
@@ -53,7 +53,7 @@ export default function FullscreenPosters({
 					/>}
 					{typeof shownImage == "object" && images[currentImage]}
 					{description && (
-						<div className="p-2 h-fit md:w-1/2 w-1/2 md:ml-10 md:text-3xl md:mt-0 mt-10 text-md border-white rounded-md border-2 flex flex-col">
+						<div className="p-2 h-fit md:w-1/4 w-1/2 md:ml-10 md:text-2xl md:mt-0 mt-10 text-md border-white rounded-md border-2 flex flex-col">
 							{description}
 						</div>
 					)}
