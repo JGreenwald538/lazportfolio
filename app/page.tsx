@@ -58,14 +58,14 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="albumcovers" />
-			<div className="flex-col flex">
+			<div className="flex-col flex w-full items-center">
 				<Header
 					name="Album Covers"
 					description="This is a collection of Client and Personal projects that express my
 						love for music and creating something that portrays the music being
 						presented."
 				/>
-				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 align-center md:px-8">
 					{imagePosters}
 				</div>
 			</div>

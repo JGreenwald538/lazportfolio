@@ -80,14 +80,14 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="flex md:flex-row flex-col">
+		<div className="flex md:flex-row flex-col ">
 			<Sidebar screen="artistWork" />
-			<div className="flex flex-col">
+			<div className="flex flex-col w-full items-center">
 				<Header
 					name="Artist Work"
 					description="A collection of client and personal projects. In a perfect world, my personal designs will be used by the artists themselves."
 				/>
-				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center md:px-8">
 					{imagePosters}
 				</div>
 			</div>

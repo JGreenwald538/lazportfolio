@@ -90,12 +90,12 @@ export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="posters" />
-			<div className="flex flex-col">
+			<div className="flex flex-col w-full items-center">
 				<Header
 					name="Posters"
 					description="Sometimes a funny idea pops into my head and these posters are the result of that. The hardest part is finding the font."
 				/>
-				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center md:px-8">
 					{imagePosters}
 				</div>
 			</div>

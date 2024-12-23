@@ -61,7 +61,7 @@ export default function Home() {
 					name="Logo & Branding"
 					description="Concept designs for fictional companies and brands"
 				/>
-				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center">
+				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center md:px-8">
 					{imagePosters}
 				</div>
 			</div>
