@@ -15,6 +15,7 @@ const images = [
 	"rockman.jpg",
 	"Shine.Poster.1.jpg",
 	"because.internet.04.jpg",
+	"FCbunny.fotos.2.5.png",
 	"poster.utopia.02.jpg",
 	"not if bridge green 1.jpg",
 	"Chroma.green.2.jpg",

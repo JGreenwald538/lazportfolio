@@ -21,8 +21,8 @@ export default function FullscreenPosters({
 				<Image
 					src={"/" + srcFolder + "/" + shownImage[image].source}
 					alt={""}
-					width={10000}
-					height={10000}
+					width={3000}
+					height={3000}
 					className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
 				></Image>
 			);
@@ -39,18 +39,15 @@ export default function FullscreenPosters({
 					className="w-screen h-screen -z-10 bg-black/80 absolute top-0"
 				></button>
 				<div className="flex md:flex-row flex-col items-center justify-center">
-					{typeof shownImage == "string" && <Image
-						src={
-							"/" +
-							srcFolder +
-							"/" +
-							shownImage
-						}
-						alt=""
-						width={10000}
-						height={10000}
-						className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
-					/>}
+					{typeof shownImage == "string" && (
+						<Image
+							src={"/" + srcFolder + "/" + shownImage}
+							alt=""
+							width={3000}
+							height={3000}
+							className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
+						/>
+					)}
 					{typeof shownImage == "object" && images[currentImage]}
 					{description && (
 						<div className="p-2 h-fit md:w-1/4 w-1/2 md:ml-10 md:text-2xl md:mt-0 mt-10 text-md border-white rounded-md border-2 flex flex-col">

@@ -21,7 +21,20 @@ export default function Home() {
 	const [shownImage, setShownImage] = useState(images[0].source);
 	const actionRef = useRef<VoidFunction | null>(null); // Use a ref to hold the latest action
 	const imagePosters: React.JSX.Element[] = [];
-	const [description, setDescription] = useState<string | undefined>(undefined);
+	interface FullscreenPostersMap {
+		[key: string]: JSX.Element;
+	}
+	const fullscreenPosters: FullscreenPostersMap = {};
+	for (const image in images) {
+		fullscreenPosters[images[image].source] = (
+			<FullscreenPosters
+				srcFolder="LogoBranding"
+				shownImage={images[image].source}
+				setIsOpen={setIsOpen}
+				description={images[image].description}
+			/>
+		);
+	}
 
 	for (const image in images) {
 		imagePosters.push(
@@ -35,7 +48,6 @@ export default function Home() {
 					};
 					actionRef.current = closing;
 					setShownImage(images[image].source);
-					setDescription(images[image].description);
 				}}
 				srcFolder="LogoBranding"
 			></ImagePoster>
@@ -65,14 +77,8 @@ export default function Home() {
 					{imagePosters}
 				</div>
 			</div>
-			{isOpen && (
-				<FullscreenPosters
-					srcFolder="LogoBranding"
-					shownImage={shownImage}
-					setIsOpen={setIsOpen}
-					description={description}
-				/>
-			)}
+			{isOpen &&
+				fullscreenPosters[shownImage]}
 		</div>
 	);
 }
