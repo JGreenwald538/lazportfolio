@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PreviousColorContext from "./context";
+import ColorProvider from "./colorProvider";
 
 export const metadata: Metadata = {
   title: "Laz's Portfolio",
@@ -11,13 +13,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
-    <html lang="en">
-      <body
-        className={`font-arboriabook antialiased bg-slate-950 text-white`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+		<ColorProvider>
+			<html lang="en">
+				<body
+					className={`font-arboriabook antialiased bg-slate-950 text-white`}
+				>
+					{children}
+				</body>
+			</html>
+		</ColorProvider>
+	);
 }
