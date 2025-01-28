@@ -15,22 +15,22 @@ const borderClasses: { [key: string]: string } = {
 	aboutMe: "#840032",
 };
 
-const getInitialState = (color: string) => {
-	if (window.innerWidth <= 768) {
-		// Mobile screen size
-		return {
-			borderBottomColor: color,
-		};
-	} else {
-		return {
-			borderRightColor: color,
-		};
-	}
-};
 
 export default function Sidebar({ screen }: { screen: string }) {
 	const currentBorderColor = borderClasses[screen] || "border-r-gray-400";
 	const {color: previousBorderColor, setColor} = useColor();
+	const getInitialState = (color: string) => {
+		if (window.innerWidth <= 768) {
+			// Mobile screen size
+			return {
+				borderBottomColor: color,
+			};
+		} else {
+			return {
+				borderRightColor: color,
+			};
+		}
+	};
 	return (
 		<motion.div
 			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10`}
