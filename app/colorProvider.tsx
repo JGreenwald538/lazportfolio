@@ -7,7 +7,7 @@ export default function ColorProvider({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const [color, setColor] = useState<string>("asd");
+	const [color, setColor] = useState<string>("");
 
 	return (
 		<>

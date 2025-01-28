@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import useColor from "../use-color";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 const borderClasses: { [key: string]: string } = {
 	artistWork: "#ffc176",
@@ -15,27 +16,54 @@ const borderClasses: { [key: string]: string } = {
 	aboutMe: "#840032",
 };
 
-
 export default function Sidebar({ screen }: { screen: string }) {
-	const currentBorderColor = borderClasses[screen] || "border-r-gray-400";
-	const {color: previousBorderColor, setColor} = useColor();
-	const getInitialState = (color: string) => {
-		if (window.innerWidth <= 768) {
-			// Mobile screen size
-			return {
-				borderBottomColor: color,
-			};
-		} else {
-			return {
-				borderRightColor: color,
-			};
+	const currentBorderColor = borderClasses[screen] || "gray";
+	const { color: previousBorderColor, setColor } = useColor();
+	const [initialState, setInitialState] = useState<
+		{ borderRightColor: string } | { borderBottomColor: string }
+	>({
+		borderRightColor: borderClasses[screen],
+	});
+	const [previousColorState, setPreviousColorState] = useState<
+		{ borderRightColor: string } | { borderBottomColor: string }
+	>({
+		borderRightColor: borderClasses[previousBorderColor],
+	});
+	useEffect(() => {
+		const getInitialState = (color: string) => {
+			if (window.innerWidth <= 768) {
+				// Mobile screen size
+				return {
+					borderBottomColor: color,
+				};
+			} else {
+				return {
+					borderRightColor: color,
+				};
+			}
+		};
+
+		setInitialState(getInitialState(borderClasses[screen]));
+		setPreviousColorState(getInitialState(previousBorderColor));
+		if(previousBorderColor == "") {
+			setPreviousColorState(initialState)
 		}
-	};
+
+		const handleResize = () => {
+			setInitialState(getInitialState(borderClasses[screen]));
+			setPreviousColorState(getInitialState(previousBorderColor));
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [screen]);
 	return (
 		<motion.div
 			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10`}
-			initial={getInitialState(previousBorderColor)}
-			animate={getInitialState(currentBorderColor)}
+			initial={previousColorState}
+			animate={initialState}
 			transition={{ duration: 1 }}
 		>
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center">
