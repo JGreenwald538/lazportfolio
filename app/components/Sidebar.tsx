@@ -27,7 +27,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 	const [previousColorState, setPreviousColorState] = useState<
 		{ borderRightColor: string } | { borderBottomColor: string }
 	>({
-		borderRightColor: borderClasses[previousBorderColor],
+		borderRightColor: previousBorderColor,
 	});
 	useEffect(() => {
 		const getInitialState = (color: string) => {
@@ -45,9 +45,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 
 		setInitialState(getInitialState(borderClasses[screen]));
 		setPreviousColorState(getInitialState(previousBorderColor));
-		if(previousBorderColor == "") {
-			setPreviousColorState(initialState)
-		}
+		console.log(previousColorState)
 
 		const handleResize = () => {
 			setInitialState(getInitialState(borderClasses[screen]));
@@ -64,7 +62,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10`}
 			initial={previousColorState}
 			animate={initialState}
-			transition={{ duration: 1 }}
+			transition={{ duration: 0.5 }}
 		>
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center">
 				<Link
