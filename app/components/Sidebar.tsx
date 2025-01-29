@@ -26,8 +26,13 @@ export default function Sidebar({ screen }: { screen: string }) {
 			: { borderBottomColor: color };
 	};
 
-	const mediaQuery = window.matchMedia("(min-width: 768px)");
-	const isDesktop = mediaQuery.matches;
+	let mediaQuery: MediaQueryList 
+	let isDesktop = false
+
+	if (typeof window !== "undefined") {
+		mediaQuery = window.matchMedia("(min-width: 768px)");
+		isDesktop = mediaQuery.matches;
+	}
 
 	const [initialState, setInitialState] = useState(() =>
 		getInitialState(borderClasses[screen], isDesktop)
@@ -53,8 +58,8 @@ export default function Sidebar({ screen }: { screen: string }) {
 		return () => {
 			mediaQuery.removeEventListener("change", handleMediaQueryChange);
 		};
-	}, [screen, previousBorderColor]);
-	
+	}, [screen, previousBorderColor, isDesktop]);
+
 	return (
 		<motion.div
 			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10`}
