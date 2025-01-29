@@ -19,44 +19,42 @@ const borderClasses: { [key: string]: string } = {
 export default function Sidebar({ screen }: { screen: string }) {
 	const currentBorderColor = borderClasses[screen] || "gray";
 	const { color: previousBorderColor, setColor } = useColor();
-	const [initialState, setInitialState] = useState<
-		{ borderRightColor: string } | { borderBottomColor: string }
-	>({
-		borderRightColor: borderClasses[screen],
-	});
-	const [previousColorState, setPreviousColorState] = useState<
-		{ borderRightColor: string } | { borderBottomColor: string }
-	>({
-		borderRightColor: previousBorderColor,
-	});
+
+	const getInitialState = (color: string, isDesktop: boolean) => {
+		return isDesktop
+			? { borderRightColor: color }
+			: { borderBottomColor: color };
+	};
+
+	const mediaQuery = window.matchMedia("(min-width: 768px)");
+	const isDesktop = mediaQuery.matches;
+
+	const [initialState, setInitialState] = useState(() =>
+		getInitialState(borderClasses[screen], isDesktop)
+	);
+	const [previousColorState, setPreviousColorState] = useState(() =>
+		getInitialState(previousBorderColor, isDesktop)
+	);
+
 	useEffect(() => {
-		const getInitialState = (color: string) => {
-			if (window.innerWidth <= 768) {
-				// Mobile screen size
-				return {
-					borderBottomColor: color,
-				};
-			} else {
-				return {
-					borderRightColor: color,
-				};
-			}
+		const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+			const isDesktop = e.matches;
+			setInitialState(getInitialState(borderClasses[screen], isDesktop));
+			setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
 		};
 
-		setInitialState(getInitialState(borderClasses[screen]));
-		setPreviousColorState(getInitialState(previousBorderColor));
-		console.log(previousColorState)
+		// Set initial states correctly on first render
+		setInitialState(getInitialState(borderClasses[screen], isDesktop));
+		setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
 
-		const handleResize = () => {
-			setInitialState(getInitialState(borderClasses[screen]));
-			setPreviousColorState(getInitialState(previousBorderColor));
-		};
+		// Listen for media query changes
+		mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-		window.addEventListener("resize", handleResize);
 		return () => {
-			window.removeEventListener("resize", handleResize);
+			mediaQuery.removeEventListener("change", handleMediaQueryChange);
 		};
-	}, [screen]);
+	}, [screen, previousBorderColor]);
+	
 	return (
 		<motion.div
 			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10`}
@@ -66,7 +64,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 		>
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center">
 				<Link
-					className="rounded-full border-white #border-2 w-[3.75rem] h-[</div>3.75rem] flex justify-center items-center mt-5"
+					className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5"
 					href={"/aboutMe"}
 					onClick={() => {
 						setColor(currentBorderColor);
