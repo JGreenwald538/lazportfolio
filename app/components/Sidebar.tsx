@@ -94,12 +94,12 @@ export default function Sidebar({ screen }: { screen: string }) {
 
 	return (
 		<motion.div
-			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10 font-outfit`}
+			className={`md:h-screen md:w-fit h-fit w-screen md:py-4 pb-4 pl-6 md:pr-6 flex flex-col sticky top-0 bg-slate-950 md:border-r-4 md:border-b-0 border-b-4 mr-0 z-10 font-outfit font-light`}
 			initial={previousColorState}
 			animate={initialState}
 			transition={{ duration: 0.5 }}
 		>
-			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center font-semibold">
+			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center font-medium">
 				<Link
 					className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5"
 					href={"/aboutMe"}
@@ -116,7 +116,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 					Racusin
 				</div>
 			</div>
-			<div className="md:flex-grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap font-light">
+			<div className="md:flex-grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
 				<Link
 					href={"/"}
 					className={`${
