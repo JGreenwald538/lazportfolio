@@ -5,9 +5,6 @@ import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
 import FullscreenPosters from "../components/FullscreenPosters";
 import Header from "../components/Header";
-// import "./Ticker.css";
-import Ticker from "react-ticker";
-import TickerComponent from "../components/Ticker";
 
 const images = [
 	"Chroma mirror 4.jpg",

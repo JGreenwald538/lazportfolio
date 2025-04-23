@@ -26,12 +26,10 @@ export default function Sidebar({ screen }: { screen: string }) {
 			: { borderBottomColor: color };
 	};
 
-	let mediaQuery: MediaQueryList 
-	let isDesktop = false
+	let isDesktop = false;
 
 	if (typeof window !== "undefined") {
-		mediaQuery = window.matchMedia("(min-width: 768px)");
-		isDesktop = mediaQuery.matches;
+		isDesktop = window.matchMedia("(min-width: 768px)").matches;
 	}
 
 	const [initialState, setInitialState] = useState(() =>
@@ -41,23 +39,57 @@ export default function Sidebar({ screen }: { screen: string }) {
 		getInitialState(previousBorderColor, isDesktop)
 	);
 
+	let mediaQuery: MediaQueryList;
+
 	useEffect(() => {
-		const handleMediaQueryChange = (e: MediaQueryListEvent) => {
-			const isDesktop = e.matches;
+		if (typeof window !== "undefined") {
+			mediaQuery = window.matchMedia("(min-width: 768px)");
+
+			const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+				const isDesktop = e.matches;
+				setInitialState(getInitialState(borderClasses[screen], isDesktop));
+				setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
+			};
+
+			// Set initial states correctly on first render
+			setInitialState(getInitialState(borderClasses[screen], mediaQuery.matches));
+			setPreviousColorState(
+				getInitialState(previousBorderColor, mediaQuery.matches)
+			);
+
+			// Listen for media query changes
+			mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+			return () => {
+				mediaQuery.removeEventListener("change", handleMediaQueryChange);
+			};
+		}
+	}, [screen, previousBorderColor]);
+
+	useEffect(() => {
+		let mediaQuery: MediaQueryList;
+
+		if (typeof window !== "undefined") {
+			mediaQuery = window.matchMedia("(min-width: 768px)");
+			isDesktop = mediaQuery.matches;
+
+			const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+				const isDesktop = e.matches;
+				setInitialState(getInitialState(borderClasses[screen], isDesktop));
+				setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
+			};
+
+			// Set initial states correctly on first render
 			setInitialState(getInitialState(borderClasses[screen], isDesktop));
 			setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
-		};
 
-		// Set initial states correctly on first render
-		setInitialState(getInitialState(borderClasses[screen], isDesktop));
-		setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
+			// Listen for media query changes
+			mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-		// Listen for media query changes
-		mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-		return () => {
-			mediaQuery.removeEventListener("change", handleMediaQueryChange);
-		};
+			return () => {
+				mediaQuery.removeEventListener("change", handleMediaQueryChange);
+			};
+		}
 	}, [screen, previousBorderColor, isDesktop]);
 
 	return (
