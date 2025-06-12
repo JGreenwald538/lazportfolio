@@ -52,7 +52,9 @@ export default function Sidebar({ screen }: { screen: string }) {
 			};
 
 			// Set initial states correctly on first render
-			setInitialState(getInitialState(borderClasses[screen], mediaQuery.matches));
+			setInitialState(
+				getInitialState(borderClasses[screen], mediaQuery.matches)
+			);
 			setPreviousColorState(
 				getInitialState(previousBorderColor, mediaQuery.matches)
 			);
@@ -180,6 +182,9 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 			</div>
 			<div className="flex flex-col space-y-1">
+				<Link href={"https://shop.lazardesigns.com"} className="bg-[#e35050] w-fit px-2 py-1 rounded-md text-white font-semibold" target="_blank">
+					My Shop
+				</Link>
 				<button
 					className="flex flex-row items-center"
 					onClick={() => {
