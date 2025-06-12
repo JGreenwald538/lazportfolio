@@ -12,6 +12,11 @@
   src: url('./fonts/Outfit-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url('./fonts/Poppins-Medium.ttf') format('truetype');
+}
+
 
 :root {
   --background: #ffffff;

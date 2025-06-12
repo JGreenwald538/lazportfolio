@@ -15,6 +15,8 @@ export default {
       fontFamily: {
         arboriabook: ['Arboria-Book', "sans-serif"],
         outfit: ['Outfit', "sans-serif"],
+        helvetica: ['Helvetica', "sans-serif"],
+        poppins: ['Poppins', "sans-serif"],
       }
     },
   },
