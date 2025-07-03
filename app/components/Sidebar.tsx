@@ -40,58 +40,31 @@ export default function Sidebar({ screen }: { screen: string }) {
 		getInitialState(previousBorderColor, isDesktop)
 	);
 
-	let mediaQuery: MediaQueryList;
+        useEffect(() => {
+                if (typeof window !== "undefined") {
+                        const mediaQuery = window.matchMedia("(min-width: 768px)");
+                        const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+                                const isDesktop = e.matches;
+                                setInitialState(getInitialState(borderClasses[screen], isDesktop));
+                                setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
+                        };
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			mediaQuery = window.matchMedia("(min-width: 768px)");
+                        // Set initial states correctly on first render
+                        setInitialState(
+                                getInitialState(borderClasses[screen], mediaQuery.matches)
+                        );
+                        setPreviousColorState(
+                                getInitialState(previousBorderColor, mediaQuery.matches)
+                        );
 
-			const handleMediaQueryChange = (e: MediaQueryListEvent) => {
-				const isDesktop = e.matches;
-				setInitialState(getInitialState(borderClasses[screen], isDesktop));
-				setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
-			};
+                        // Listen for media query changes
+                        mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-			// Set initial states correctly on first render
-			setInitialState(getInitialState(borderClasses[screen], mediaQuery.matches));
-			setPreviousColorState(
-				getInitialState(previousBorderColor, mediaQuery.matches)
-			);
-
-			// Listen for media query changes
-			mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-			return () => {
-				mediaQuery.removeEventListener("change", handleMediaQueryChange);
-			};
-		}
-	}, [screen, previousBorderColor]);
-
-	useEffect(() => {
-		let mediaQuery: MediaQueryList;
-
-		if (typeof window !== "undefined") {
-			mediaQuery = window.matchMedia("(min-width: 768px)");
-			isDesktop = mediaQuery.matches;
-
-			const handleMediaQueryChange = (e: MediaQueryListEvent) => {
-				const isDesktop = e.matches;
-				setInitialState(getInitialState(borderClasses[screen], isDesktop));
-				setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
-			};
-
-			// Set initial states correctly on first render
-			setInitialState(getInitialState(borderClasses[screen], isDesktop));
-			setPreviousColorState(getInitialState(previousBorderColor, isDesktop));
-
-			// Listen for media query changes
-			mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-			return () => {
-				mediaQuery.removeEventListener("change", handleMediaQueryChange);
-			};
-		}
-	}, [screen, previousBorderColor, isDesktop]);
+                        return () => {
+                                mediaQuery.removeEventListener("change", handleMediaQueryChange);
+                        };
+                }
+        }, [screen, previousBorderColor]);
 
 	return (
 		<motion.div
@@ -193,6 +166,9 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 			</div>
 			<div className="flex flex-col space-y-1">
+				<Link href={"https://shop.lazardesigns.com"} className="bg-[#e35050] w-fit px-2 py-1 rounded-md text-white font-semibold" target="_blank">
+					My Shop
+				</Link>
 				<button
 					className="flex flex-row items-center"
 					onClick={() => {
