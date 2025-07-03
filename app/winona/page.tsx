@@ -74,7 +74,8 @@ export default function WinonaPage() {
 										</li>
 										<li>
 											Embarrassment or denial: Women may not be ready to
-											acknowledge they're in menopause, making outreach tricky.
+											acknowledge they&apos;re in menopause, making outreach
+											tricky.
 										</li>
 										<li>
 											Lack of trusted treatment: Skepticism around hormone
