@@ -7,9 +7,9 @@ export default function WinonaPage() {
 	return (
 		<div className="flex flex-row h-screen bg-white">
 			<Sidebar screen="winona" />
-			<div className="flex flex-col w-full h-screen overflow-y-auto bg-white text-black">
+			<div className="flex flex-col w-full h-screen overflow-y-auto bg-white text-black snap-y snap-mandatory">
 				{/* Section 1 */}
-				<div className="w-full flex flex-row min-h-screen p-10">
+				<div className="w-full flex flex-row min-h-screen p-10 snap-center snap-always">
 					<div className="w-1/2 flex flex-col justify-center">
 						<div className="flex flex-col space-y-4">
 							<Image
@@ -48,7 +48,7 @@ export default function WinonaPage() {
 				</div>
 
 				{/* Section 2 */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans">
+				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<div className="max-w-6xl bg-white">
 						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 							Winona Design Internship
@@ -141,7 +141,7 @@ export default function WinonaPage() {
 					</div>
 				</div>
 				{/* Section 3 – Favorite Designs */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans">
+				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 						Winona Design Internship
 					</p>
@@ -173,7 +173,7 @@ export default function WinonaPage() {
 				</div>
 
 				{/* Section 4 – Campaigns */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans">
+				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<div className="flex flex-row h-full">
 						<div className="mr-5 flex-1 h-full">
 							<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
@@ -224,7 +224,7 @@ export default function WinonaPage() {
 				</div>
 
 				{/* Section 5 – Designs Grid */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans">
+				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 						Winona Design Internship
 					</p>
@@ -269,7 +269,7 @@ export default function WinonaPage() {
 								</div>
 							</div>
 						</div>
-						<div className="flex flex-row space-x-20 h-1/4">
+						<div className="flex flex-row space-x-20 h-1/4 pb-10">
 							<div className="rounded-xl shadow-xl w-1/2">
 								<Image
 									src="/Winona/winona9.png"
@@ -285,7 +285,7 @@ export default function WinonaPage() {
 				</div>
 
 				{/* Section 6 – Final Designs */}
-				<div className="min-h-screen bg-white text-[#1E1E1E] font-sans">
+				<div className="min-h-screen bg-white text-[#1E1E1E] font-sans snap-center snap-always">
 					<div className="flex flex-row h-full">
 						<div className="flex-1 flex flex-col justify-between items-start space-y-6 p-10">
 							<div className="flex flex-col space-y-20">
