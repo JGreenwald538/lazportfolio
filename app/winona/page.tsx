@@ -127,7 +127,15 @@ export default function WinonaPage() {
 									</ul>
 								</div>
 
-								<div className="w-full h-80 rounded-xl bg-[#B795BB] shadow-lg" />
+								<div className="w-full h-80 rounded-xl shadow-lg">
+									<Image
+										src="/Winona/winona2.jpg"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="w-full h-full object-cover"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -142,8 +150,24 @@ export default function WinonaPage() {
 							Favorite Designs
 						</h1>
 						<div className="flex flex-row space-x-12">
-							<div className="h-96 w-1/2 rounded-xl bg-[#B795BB] shadow-xl" />
-							<div className="h-96 w-1/2 rounded-xl bg-[#B795BB] shadow-xl" />{" "}
+							<div className="h-96 w-1/2 rounded-xl shadow-xl">
+								<Image
+									src="/Winona/winona3.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</div>
+							<div className="h-96 w-1/2 rounded-xl shadow-xl">
+								<Image
+									src="/Winona/winona4.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -206,11 +230,55 @@ export default function WinonaPage() {
 					</p>
 					<div className="flex flex-col justify-center h-full space-y-20 pt-20">
 						<div className="flex flex-row w-full h-3/4 space-x-20">
-							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
-							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
+							<div className="rounded-xl shadow-xl w-1/2">
+								<Image
+									src="/Winona/winona5.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-scale-down"
+								/>
+							</div>
+							<div className="relative rounded-xl shadow-xl w-1/2 h-full">
+								{/* Background image */}
+								<Image
+									src="/Winona/winona6.jpg"
+									alt="Winona Background"
+									fill
+									className="object-cover rounded-xl"
+								/>
+
+								{/* Overlay image 7 – left */}
+								<div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1/2 h-3/4 z-10 p-2">
+									<Image
+										src="/Winona/winona7.png"
+										alt="Overlay 1"
+										fill
+										className="object-contain"
+									/>
+								</div>
+
+								{/* Overlay image 8 – right */}
+								<div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1/2 h-3/4 z-10 p-2">
+									<Image
+										src="/Winona/winona8.png"
+										alt="Overlay 2"
+										fill
+										className="object-contain"
+									/>
+								</div>
+							</div>
 						</div>
 						<div className="flex flex-row space-x-20 h-1/4">
-							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
+							<div className="rounded-xl shadow-xl w-1/2">
+								<Image
+									src="/Winona/winona9.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-cover"
+								/>
+							</div>
 							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
 						</div>
 					</div>
@@ -240,7 +308,53 @@ export default function WinonaPage() {
 								Laz Racusin &nbsp; | &nbsp; Winona &nbsp; | &nbsp; Summer 2025
 							</div>
 						</div>
-						<div className="w-3/5 h-full bg-[#B795BB] shadow-xl" />
+						<div
+							className="w-3/5 h-full shadow-xl grid-cols-3 grid gap-4 p-10 bg-[url('/Winona/winona6.jpg')]"
+							style={{ background: "url(/Winona/winona6.jpg)" }}
+						>
+							<Image
+								src="/Winona/winona10.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+							<Image
+								src="/Winona/winona11.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+							<Image
+								src="/Winona/winona12.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+							<Image
+								src="/Winona/winona13.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+							<Image
+								src="/Winona/winona14.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+							<Image
+								src="/Winona/winona15.png"
+								alt="Winona"
+								width={1000}
+								height={1000}
+								className="w-full h-full object-contain rounded"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
