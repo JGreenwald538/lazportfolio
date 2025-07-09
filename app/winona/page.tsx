@@ -253,8 +253,8 @@ export default function WinonaPage() {
 					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 						Winona Design Internship
 					</p>
-					<div className="flex flex-col justify-center h-full space-y-20 pt-20">
-						<div className="flex flex-row w-full h-3/4 space-x-20">
+					<div className="flex flex-col justify-center h-full space-y-10 pt-20">
+						<div className="flex flex-row w-full h-3/4 space-x-10">
 							<button
 								className="rounded-xl shadow-xl w-1/2"
 								onClick={() => {
@@ -306,23 +306,44 @@ export default function WinonaPage() {
 								</div>
 							</button>
 						</div>
-						<div className="flex flex-row space-x-20 h-1/4 pb-10 rounded-xl">
+						<div className="flex flex-row space-x-10 h-1/4 pb-10">
+							{/* Top Half */}
 							<button
-								className="rounded-xl shadow-xl w-1/2"
+								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
 								onClick={() => {
 									setIsOpen(true);
 									setShownImage("winona9.png");
 								}}
 							>
-								<Image
-									src="/Winona/winona9.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-cover rounded-xl"
-								/>
+								<div className="relative w-full h-full">
+									<Image
+										src="/Winona/winona9.png"
+										alt="Winona Top Half"
+										width={1000}
+										height={1000}
+										className="w-full h-[200%] object-cover translate-y-0"
+									/>
+								</div>
 							</button>
-							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
+
+							{/* Bottom Half */}
+							<button
+								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona9.png");
+								}}
+							>
+								<div className="relative w-full h-full">
+									<Image
+										src="/Winona/winona9.png"
+										alt="Winona Bottom Half"
+										width={1000}
+										height={1000}
+										className="w-full h-[200%] object-cover -translate-y-1/2"
+									/>
+								</div>
+							</button>
 						</div>
 					</div>
 				</FadeInSection>
