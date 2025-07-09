@@ -3,8 +3,14 @@
 import Image from "next/image";
 import Sidebar from "../components/Sidebar";
 import FadeInSection from "../components/FadeInComponent"; // wherever you save it
+import FullscreenPosters from "../components/FullscreenPosters";
+import { useState } from "react";
 
 export default function WinonaPage() {
+	const [isOpen, setIsOpen] = useState(false);
+	const [shownImage, setShownImage] = useState<
+		string | { source: string; description: string | undefined }[]
+	>("winona1.png");
 	return (
 		<div className="flex flex-row h-screen bg-white">
 			<Sidebar screen="winona" />
@@ -37,7 +43,13 @@ export default function WinonaPage() {
 							community.
 						</div>
 					</div>
-					<div className="w-1/2 flex flex-col justify-center items-center space-y-4">
+					<button
+						className="w-1/2 flex flex-col justify-center items-center space-y-4"
+						onClick={() => {
+							setIsOpen(true);
+							setShownImage("winona1.png");
+						}}
+					>
 						<Image
 							src="/Winona/winona1.png"
 							alt="Winona"
@@ -45,7 +57,7 @@ export default function WinonaPage() {
 							height={1000}
 							className="w-full h-auto px-10"
 						/>
-					</div>
+					</button>
 				</FadeInSection>
 
 				{/* Section 2 */}
@@ -143,15 +155,21 @@ export default function WinonaPage() {
 				</FadeInSection>
 				{/* Section 3 – Favorite Designs */}
 				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
-					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
-						Winona Design Internship
-					</p>
-					<div className="flex flex-col justify-center h-full space-y-5">
+					<div className="flex flex-col justify-center h-full space-y-8">
+						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
+							Winona Design Internship
+						</p>
 						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
 							Favorite Designs
 						</h1>
 						<div className="flex flex-row space-x-12">
-							<div className="h-96 w-1/2 rounded-xl shadow-xl">
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona3.png");
+								}}
+							>
 								<Image
 									src="/Winona/winona3.png"
 									alt="Winona"
@@ -159,8 +177,14 @@ export default function WinonaPage() {
 									height={2000}
 									className="w-full h-full object-scale-down"
 								/>
-							</div>
-							<div className="h-96 w-1/2 rounded-xl shadow-xl">
+							</button>
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona4.png");
+								}}
+							>
 								<Image
 									src="/Winona/winona4.png"
 									alt="Winona"
@@ -168,7 +192,7 @@ export default function WinonaPage() {
 									height={2000}
 									className="w-full h-full object-scale-down"
 								/>
-							</div>
+							</button>
 						</div>
 					</div>
 				</FadeInSection>
@@ -183,11 +207,11 @@ export default function WinonaPage() {
 							<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
 								Campaigns
 							</h1>
-							<hr className="my-6 border-[#1E1E1E]" />
+							<hr className="my-6 border-[#1E1E1E] opacity-30" />
 
 							{/* Text section */}
-							<div className="space-y-6">
-								<div className="flex flex-col space-y-3">
+							<div className="space-y-5">
+								<div className="flex flex-col space-y-1">
 									<h2 className="text-xl font-bold uppercase">Problem</h2>
 									<p className="text-xl">
 										<strong>Menopause still lives in the shadows.</strong> Even
@@ -198,7 +222,7 @@ export default function WinonaPage() {
 										deserve.
 									</p>
 								</div>
-								<div className="flex flex-col space-y-3">
+								<div className="flex flex-col space-y-1">
 									<h2 className="text-xl font-bold uppercase">Needs</h2>
 									<p className="text-xl">
 										Advertising for Winona has to be carefully thought out:
@@ -214,7 +238,7 @@ export default function WinonaPage() {
 						</div>
 
 						{/* Images grid */}
-						<div className="w-full pl-5 border-l-[1px] border-[#1E1E1E] flex-1 justify-center h-full flex flex-col space-y-16">
+						<div className="w-full pl-5 border-[#1E1E1E] flex-1 justify-center h-full flex flex-col space-y-16">
 							<div className="flex flex-row justify-between w-full">
 								<div className="h-48 w-48 rounded-xl bg-[#B795BB] shadow-xl" />
 								<div className="h-48 w-48 rounded-xl bg-[#B795BB] shadow-xl" />
@@ -231,7 +255,13 @@ export default function WinonaPage() {
 					</p>
 					<div className="flex flex-col justify-center h-full space-y-20 pt-20">
 						<div className="flex flex-row w-full h-3/4 space-x-20">
-							<div className="rounded-xl shadow-xl w-1/2">
+							<button
+								className="rounded-xl shadow-xl w-1/2"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona5.png");
+								}}
+							>
 								<Image
 									src="/Winona/winona5.png"
 									alt="Winona"
@@ -239,8 +269,14 @@ export default function WinonaPage() {
 									height={1000}
 									className="w-full h-full object-scale-down"
 								/>
-							</div>
-							<div className="relative rounded-xl shadow-xl w-1/2 h-full">
+							</button>
+							<button
+								className="relative rounded-xl shadow-xl w-1/2 h-full"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona16.png");
+								}}
+							>
 								{/* Background image */}
 								<Image
 									src="/Winona/winona6.jpg"
@@ -268,18 +304,24 @@ export default function WinonaPage() {
 										className="object-contain"
 									/>
 								</div>
-							</div>
+							</button>
 						</div>
-						<div className="flex flex-row space-x-20 h-1/4 pb-10">
-							<div className="rounded-xl shadow-xl w-1/2">
+						<div className="flex flex-row space-x-20 h-1/4 pb-10 rounded-xl">
+							<button
+								className="rounded-xl shadow-xl w-1/2"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona9.png");
+								}}
+							>
 								<Image
 									src="/Winona/winona9.png"
 									alt="Winona"
 									width={1000}
 									height={1000}
-									className="w-full h-full object-cover"
+									className="w-full h-full object-cover rounded-xl"
 								/>
-							</div>
+							</button>
 							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
 						</div>
 					</div>
@@ -309,56 +351,68 @@ export default function WinonaPage() {
 								Laz Racusin &nbsp; | &nbsp; Winona &nbsp; | &nbsp; Summer 2025
 							</div>
 						</div>
-						<div
-							className="w-3/5 h-full shadow-xl grid-cols-3 grid gap-4 p-10 bg-[url('/Winona/winona6.jpg')]"
-							style={{ background: "url(/Winona/winona6.jpg)" }}
-						>
-							<Image
-								src="/Winona/winona10.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
-							<Image
-								src="/Winona/winona11.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
-							<Image
-								src="/Winona/winona12.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
-							<Image
-								src="/Winona/winona13.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
-							<Image
-								src="/Winona/winona14.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
-							<Image
-								src="/Winona/winona15.png"
-								alt="Winona"
-								width={1000}
-								height={1000}
-								className="w-full h-full object-contain rounded"
-							/>
+						<div className="w-3/5 h-full flex justify-center items-center shadow-black shadow-2xl bg-transparent">
+							<button
+								className="h-full  grid-cols-3 grid gap-4 p-10 bg-[url('/Winona/winona6.jpg')]"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona17.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona10.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+								<Image
+									src="/Winona/winona11.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+								<Image
+									src="/Winona/winona12.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+								<Image
+									src="/Winona/winona13.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+								<Image
+									src="/Winona/winona14.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+								<Image
+									src="/Winona/winona15.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-contain rounded"
+								/>
+							</button>
 						</div>
 					</div>
 				</FadeInSection>
 			</div>
+			{isOpen && (
+				<FullscreenPosters
+					srcFolder="Winona"
+					shownImage={shownImage}
+					setIsOpen={setIsOpen}
+				/>
+			)}
 		</div>
 	);
 }
