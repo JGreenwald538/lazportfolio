@@ -308,12 +308,8 @@ export default function WinonaPage() {
 						</div>
 						<div className="flex flex-row space-x-10 h-1/4 pb-10">
 							{/* Top Half */}
-							<button
+							<div
 								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona9.png");
-								}}
 							>
 								<div className="relative w-full h-full">
 									<Image
@@ -324,15 +320,11 @@ export default function WinonaPage() {
 										className="w-full h-[200%] object-cover translate-y-0"
 									/>
 								</div>
-							</button>
+							</div>
 
 							{/* Bottom Half */}
-							<button
+							<div
 								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona9.png");
-								}}
 							>
 								<div className="relative w-full h-full">
 									<Image
@@ -343,7 +335,7 @@ export default function WinonaPage() {
 										className="w-full h-[200%] object-cover -translate-y-1/2"
 									/>
 								</div>
-							</button>
+							</div>
 						</div>
 					</div>
 				</FadeInSection>
