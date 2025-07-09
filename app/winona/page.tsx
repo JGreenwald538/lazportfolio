@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Sidebar from "../components/Sidebar";
+import FadeInSection from "../components/FadeInComponent"; // wherever you save it
 
 export default function WinonaPage() {
 	return (
@@ -9,7 +10,7 @@ export default function WinonaPage() {
 			<Sidebar screen="winona" />
 			<div className="flex flex-col w-full h-screen overflow-y-auto bg-white text-black snap-y snap-mandatory">
 				{/* Section 1 */}
-				<div className="w-full flex flex-row min-h-screen p-10 snap-center snap-always">
+				<FadeInSection className="w-full flex flex-row min-h-screen p-10 snap-center snap-always">
 					<div className="w-1/2 flex flex-col justify-center">
 						<div className="flex flex-col space-y-4">
 							<Image
@@ -45,10 +46,10 @@ export default function WinonaPage() {
 							className="w-full h-auto px-10"
 						/>
 					</div>
-				</div>
+				</FadeInSection>
 
 				{/* Section 2 */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<div className="max-w-6xl bg-white">
 						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 							Winona Design Internship
@@ -139,9 +140,9 @@ export default function WinonaPage() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</FadeInSection>
 				{/* Section 3 – Favorite Designs */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 						Winona Design Internship
 					</p>
@@ -170,10 +171,10 @@ export default function WinonaPage() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</FadeInSection>
 
 				{/* Section 4 – Campaigns */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<div className="flex flex-row h-full">
 						<div className="mr-5 flex-1 h-full">
 							<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
@@ -221,10 +222,10 @@ export default function WinonaPage() {
 							<div className="col-span-2 h-96 w-full rounded-xl bg-[#B795BB] shadow-xl" />
 						</div>
 					</div>
-				</div>
+				</FadeInSection>
 
 				{/* Section 5 – Designs Grid */}
-				<div className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 						Winona Design Internship
 					</p>
@@ -282,10 +283,10 @@ export default function WinonaPage() {
 							<div className="rounded-xl bg-[#B795BB] shadow-xl w-1/2" />
 						</div>
 					</div>
-				</div>
+				</FadeInSection>
 
 				{/* Section 6 – Final Designs */}
-				<div className="min-h-screen bg-white text-[#1E1E1E] font-sans snap-center snap-always">
+				<FadeInSection className="min-h-screen bg-white text-[#1E1E1E] font-sans snap-center snap-always">
 					<div className="flex flex-row h-full">
 						<div className="flex-1 flex flex-col justify-between items-start space-y-6 p-10">
 							<div className="flex flex-col space-y-20">
@@ -356,7 +357,7 @@ export default function WinonaPage() {
 							/>
 						</div>
 					</div>
-				</div>
+				</FadeInSection>
 			</div>
 		</div>
 	);
