@@ -67,15 +67,15 @@ export default function WinonaPage() {
 							Winona Design Internship
 						</p>
 						<h1 className="text-6xl sm:text-7xl font-semibold mt-2 w-1/2">
-							Audience & Insight Overview
+							Understanding Our Audience
 						</h1>
-						<hr className="my-6 border-[#1E1E1E]" />
+						<hr className="my-6 border-[#1E1E1E] w-1/2" />
 
 						<div className="grid md:grid-cols-2 gap-10">
 							{/* Left Side */}
 							<div className="space-y-6 items-stretch">
 								<div>
-									<h2 className="text-xl font-semibold mb-2">Pain Points</h2>
+									<h2 className="text-xl font-semibold">Pain Points</h2>
 									<ul className="list-disc list-inside space-y-1 text-xl">
 										<li>
 											Silence around menopause: Women often feel isolated,
@@ -99,12 +99,8 @@ export default function WinonaPage() {
 								</div>
 
 								<div>
-									<h2 className="text-xl font-semibold mb-2">
-										Target Audience
-									</h2>
-									<p className="mb-2 text-xl">
-										Women 35–59, especially those who:
-									</p>
+									<h2 className="text-xl font-semibold">Target Audience</h2>
+									<p className="text-xl">Women 35–59, especially those who:</p>
 									<ul className="list-disc list-inside space-y-1 text-xl">
 										<li>
 											Are entering or in the menopause transition (including
@@ -126,9 +122,7 @@ export default function WinonaPage() {
 							{/* Right Side */}
 							<div className="space-y-6">
 								<div>
-									<h2 className="text-xl font-semibold mb-2">
-										Common Symptoms
-									</h2>
+									<h2 className="text-xl font-semibold">Common Symptoms</h2>
 									<ul className="list-disc list-inside space-y-1 text-xl">
 										<li>Hot flashes & night sweats</li>
 										<li>Mood swings, anxiety, depression</li>
@@ -140,13 +134,13 @@ export default function WinonaPage() {
 									</ul>
 								</div>
 
-								<div className="w-full h-80 rounded-xl shadow-lg">
+								<div className="w-full h-[21rem] rounded-xl shadow-lg">
 									<Image
 										src="/Winona/winona2.jpg"
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="w-full h-full object-cover"
+										className="w-full h-full object-cover rounded-xl"
 									/>
 								</div>
 							</div>
@@ -204,46 +198,90 @@ export default function WinonaPage() {
 							<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 								Winona Design Internship
 							</p>
-							<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
-								Campaigns
-							</h1>
-							<hr className="my-6 border-[#1E1E1E] opacity-30" />
+							<div className="flex flex-col justify-center h-full space-y-6">
+								<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
+									Campaigns
+								</h1>
+								<hr className="my-6 border-[#1E1E1E] opacity-30" />
 
-							{/* Text section */}
-							<div className="space-y-5">
-								<div className="flex flex-col space-y-1">
-									<h2 className="text-xl font-bold uppercase">Problem</h2>
-									<p className="text-xl">
-										<strong>Menopause still lives in the shadows.</strong> Even
-										though it affects half the population, menopause is rarely
-										talked about which leaves many women to navigate it alone.
-										Misinformation and stigma, combined with a lack of real
-										support, make it harder for women to find the relief they
-										deserve.
-									</p>
+								{/* Text section */}
+								<div className="space-y-5">
+									<div className="flex flex-col space-y-3">
+										<h2 className="text-2xl font-bold uppercase">Problem</h2>
+										<p className="text-xl">
+											<strong>Menopause still lives in the shadows.</strong>{" "}
+											Even though it affects half the population, menopause is
+											rarely talked about which leaves many women to navigate it
+											alone. Misinformation and stigma, combined with a lack of
+											real support, make it harder for women to find the relief
+											they deserve.
+										</p>
+									</div>
+									<div className="flex flex-col space-y-3">
+										<h2 className="text-2xl font-bold uppercase">Needs</h2>
+										<p className="text-xl">
+											Advertising for Winona has to be carefully thought out:
+											acknowledging symptoms without shame, offering real
+											solutions without overpromising. Many women aren’t ready
+											to talk openly about menopause or admit they’re in it.
+											That’s why our messaging is empathetic and focused on
+											real, personalized care.
+										</p>
+									</div>
 								</div>
-								<div className="flex flex-col space-y-1">
-									<h2 className="text-xl font-bold uppercase">Needs</h2>
-									<p className="text-xl">
-										Advertising for Winona has to be carefully thought out:
-										acknowledging symptoms without shame, offering real
-										solutions without overpromising. Many women aren’t ready to
-										talk openly about menopause or admit they’re in it. That’s
-										why our messaging is empathetic and focused on real,
-										personalized care.
-									</p>
-								</div>
-								<div className="h-64 rounded-xl bg-[#B795BB] shadow-xl" />
 							</div>
 						</div>
 
 						{/* Images grid */}
 						<div className="w-full pl-5 border-[#1E1E1E] flex-1 justify-center h-full flex flex-col space-y-16">
-							<div className="flex flex-row justify-between w-full">
-								<div className="h-48 w-48 rounded-xl bg-[#B795BB] shadow-xl" />
-								<div className="h-48 w-48 rounded-xl bg-[#B795BB] shadow-xl" />
+							<div className="flex flex-row justify-between w-full space-x-10 h-96">
+								<button
+									className="h-full w-full rounded-xl shadow-xl"
+									onClick={() => {
+										setIsOpen(true);
+										setShownImage("winona19.jpg");
+									}}
+								>
+									<Image
+										src="/Winona/winona19.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</button>
+
+								<button
+									className="h-full w-full rounded-xl shadow-xl"
+									onClick={() => {
+										setIsOpen(true);
+										setShownImage("winona18.png");
+									}}
+								>
+									<Image
+										src="/Winona/winona18.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="w-full h-full object-cover rounded-xl"
+									/>
+								</button>
 							</div>
-							<div className="col-span-2 h-96 w-full rounded-xl bg-[#B795BB] shadow-xl" />
+							<button
+								className="col-span-2 h-96 w-full rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona20.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona20.png"
+									alt="Winona"
+									width={1000}
+									height={1000}
+									className="w-full h-full object-fill rounded-xl"
+								/>
+							</button>
 						</div>
 					</div>
 				</FadeInSection>
@@ -308,9 +346,7 @@ export default function WinonaPage() {
 						</div>
 						<div className="flex flex-row space-x-10 h-1/4 pb-10">
 							{/* Top Half */}
-							<div
-								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
-							>
+							<div className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl">
 								<div className="relative w-full h-full">
 									<Image
 										src="/Winona/winona9.png"
@@ -323,9 +359,7 @@ export default function WinonaPage() {
 							</div>
 
 							{/* Bottom Half */}
-							<div
-								className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl"
-							>
+							<div className="w-1/2 h-full overflow-hidden rounded-xl shadow-xl">
 								<div className="relative w-full h-full">
 									<Image
 										src="/Winona/winona9.png"
@@ -372,48 +406,61 @@ export default function WinonaPage() {
 									setShownImage("winona17.png");
 								}}
 							>
-								<Image
-									src="/Winona/winona10.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
-								<Image
-									src="/Winona/winona11.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
-								<Image
-									src="/Winona/winona12.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
-								<Image
-									src="/Winona/winona13.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
-								<Image
-									src="/Winona/winona14.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
-								<Image
-									src="/Winona/winona15.png"
-									alt="Winona"
-									width={1000}
-									height={1000}
-									className="w-full h-full object-contain rounded"
-								/>
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona10.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona11.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona12.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
+								{/* Bottom row */}
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona13.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona14.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
+								<div className="w-full h-full flex justify-center items-center">
+									<Image
+										src="/Winona/winona15.png"
+										alt="Winona"
+										width={1000}
+										height={1000}
+										className="object-contain rounded"
+									/>
+								</div>
 							</button>
 						</div>
 					</div>
