@@ -134,7 +134,7 @@ export default function WinonaPage() {
 									</ul>
 								</div>
 
-								<div className="w-full h-[21rem] rounded-xl shadow-lg">
+								<div className="w-full h-72 rounded-xl shadow-lg">
 									<Image
 										src="/Winona/winona2.jpg"
 										alt="Winona"
