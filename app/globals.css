@@ -12,6 +12,11 @@
   src: url('./fonts/Outfit-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url('./fonts/Poppins-Medium.ttf') format('truetype');
+}
+
 
 :root {
   --background: #ffffff;
@@ -29,4 +34,9 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Add some left padding for better alignment */
 }
