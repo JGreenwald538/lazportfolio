@@ -66,10 +66,10 @@ export default function WinonaPage() {
 						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
 							Winona Design Internship
 						</p>
-						<h1 className="text-6xl sm:text-7xl font-semibold mt-2 w-1/2">
+						<h1 className="text-6xl sm:text-7xl font-semibold mt-2 ">
 							Understanding Our Audience
 						</h1>
-						<hr className="my-6 border-[#1E1E1E] w-1/2" />
+						<hr className="my-6 border-[#1E1E1E]" />
 
 						<div className="grid md:grid-cols-2 gap-10">
 							{/* Left Side */}
