@@ -166,7 +166,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 			</div>
 			<div className="flex flex-col space-y-1">
-				<Link href={"https://shop.lazardesigns.com"} className="bg-[#e35050] px-2 py-1 rounded-md text-white font-semibold w-full" target="_blank">
+				<Link href={"https://shop.lazardesigns.com"} className="bg-[#e35050] px-2 py-1 rounded-md text-white font-semibold w-full hover:transform hover:scale-105 transition-transform duration-200" target="_blank">
 					My Shop
 				</Link>
 				<button
