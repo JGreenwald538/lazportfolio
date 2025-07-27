@@ -81,7 +81,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="flex md:flex-row flex-col max-w-[100vw]">
+		<div className="flex md:flex-row flex-col max-w-screen">
 			<Sidebar screen="artistWork" />
 			<div className="flex flex-col max-w-full">
 				<div className="flex flex-col max-w-full items-center">

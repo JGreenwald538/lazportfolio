@@ -75,7 +75,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 		>
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center font-medium">
 				<Link
-					className="rounded-full border-white #border-2 w-[3.75rem] h-[3.75rem] flex justify-center items-center mt-5"
+					className="rounded-full border-white #border-2 w-15 h-15 flex justify-center items-center mt-5"
 					href={"/aboutMe"}
 					onClick={() => {
 						setColor(currentBorderColor);
@@ -90,7 +90,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 					Racusin
 				</div>
 			</div>
-			<div className="md:flex-grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
+			<div className="md:grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
 				<Link
 					href={"/"}
 					className={`${

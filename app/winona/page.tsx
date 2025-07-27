@@ -412,7 +412,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 								<div className="w-full h-full flex justify-center items-center">
@@ -421,7 +421,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 								<div className="w-full h-full flex justify-center items-center">
@@ -430,7 +430,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 								{/* Bottom row */}
@@ -440,7 +440,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 								<div className="w-full h-full flex justify-center items-center">
@@ -449,7 +449,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 								<div className="w-full h-full flex justify-center items-center">
@@ -458,7 +458,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
-										className="object-contain rounded"
+										className="object-contain rounded-sm"
 									/>
 								</div>
 							</button>
