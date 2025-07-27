@@ -136,7 +136,7 @@ export default function WinonaPage() {
 
 								<div className="w-full h-72 rounded-xl shadow-lg">
 									<Image
-										src="/Winona/winona2.jpg"
+										src="/Winona/winona2.png"
 										alt="Winona"
 										width={1000}
 										height={1000}
@@ -154,14 +154,80 @@ export default function WinonaPage() {
 							Winona Design Internship
 						</p>
 						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
-							Favorite Designs
+							Out of The Fog Campaign
 						</h1>
 						<div className="flex flex-row space-x-12">
 							<button
-								className="h-96 w-1/2 rounded-xl shadow-xl"
+								className="h-96 w-1/2 rounded-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona21.png");
+								}}
+								style={{
+									boxShadow:
+										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
+								}}
+							>
+								<Image
+									src="/Winona/winona21.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+							<button
+								className="h-96 w-1/2 rounded-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona22.png");
+								}}
+								style={{
+									boxShadow:
+										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
+								}}
+							>
+								<Image
+									src="/Winona/winona22.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+						</div>
+						<div className="flex w-full justify-center">
+							<div
+								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
+								style={{
+									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
+								}}
+							>
+								Two of my favorite designs from the “Let&apos;s Talk About It”
+								Campaign
+							</div>
+						</div>
+					</div>
+				</FadeInSection>
+
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+					<div className="flex flex-col justify-center h-full space-y-8">
+						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
+							Winona Design Internship
+						</p>
+						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
+							Let&apos;s Talk About It Campaign
+						</h1>
+						<div className="flex flex-row space-x-12">
+							<button
+								className="h-96 w-1/2 rounded-xl"
 								onClick={() => {
 									setIsOpen(true);
 									setShownImage("winona3.png");
+								}}
+								style={{
+									boxShadow:
+										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
 								}}
 							>
 								<Image
@@ -173,10 +239,14 @@ export default function WinonaPage() {
 								/>
 							</button>
 							<button
-								className="h-96 w-1/2 rounded-xl shadow-xl"
+								className="h-96 w-1/2 rounded-xl"
 								onClick={() => {
 									setIsOpen(true);
 									setShownImage("winona4.png");
+								}}
+								style={{
+									boxShadow:
+										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
 								}}
 							>
 								<Image
@@ -187,6 +257,17 @@ export default function WinonaPage() {
 									className="w-full h-full object-scale-down"
 								/>
 							</button>
+						</div>
+						<div className="flex w-full justify-center">
+							<div
+								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
+								style={{
+									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
+								}}
+							>
+								Two of my favorite designs from the “Let&apos;s Talk About It”
+								Campaign
+							</div>
 						</div>
 					</div>
 				</FadeInSection>
