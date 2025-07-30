@@ -140,6 +140,7 @@ export default function WinonaPage() {
 										alt="Winona"
 										width={1000}
 										height={1000}
+										// fill
 										className="w-full h-full object-cover rounded-xl"
 									/>
 								</div>

@@ -9,6 +9,8 @@
   --font-outfit: Outfit, sans-serif;
   --font-helvetica: Helvetica, sans-serif;
   --font-poppins: Poppins, sans-serif;
+  --font-nclneovibes: NCLNeovibes, sans-serif;
+  --font-florencesans: 'Florencesans', sans-serif;
 }
 
 /*
@@ -42,6 +44,203 @@
 @font-face {
   font-family: "Poppins";
   src: url('./fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "NCLNeovibes";
+  src: url('./fonts/NCLNeovibes-Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn01.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn02.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn03.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn04.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn05.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn06.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn07.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn08.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn09.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn10.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn11.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn12.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn13.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn14.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn15.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn16.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn33.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn34.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn37.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn38.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn41.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn42.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn45.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Florencesans';
+  src: url('./fonts/FlorenceSans/Florsn46.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
 }
 
 
