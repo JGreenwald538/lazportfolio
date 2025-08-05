@@ -13,8 +13,9 @@ const borderClasses: { [key: string]: string } = {
 	posters: "#466995",
 	albumcovers: "#ACD2ED",
 	logoBranding: "#4C9459",
-	aboutMe: "#840032",
+	aboutMe: "#CA352A",
 	winona: "#9072D8",
+	mockups: "#4FCCC9",
 };
 
 export default function Sidebar({ screen }: { screen: string }) {
@@ -116,6 +117,30 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 				<div className="inline md:hidden">|</div>
 				<Link
+					href={"/artistWork"}
+					className={`${
+						screen === "artistWork" ? "text-[#ffc176]" : "hover:text-[#ffc176]"
+					}`}
+					onClick={() => {
+						setColor(currentBorderColor);
+					}}
+				>
+					Artist Work
+				</Link>
+				<div className="inline md:hidden">|</div>
+				<Link
+					href={"/mockups"}
+					className={`${
+						screen === "mockups" ? "text-[#4FCCC9]" : "hover:text-[#4FCCC9]"
+					}`}
+					onClick={() => {
+						setColor(currentBorderColor);
+					}}
+				>
+					Clothing and Mockups
+				</Link>
+				<div className="inline md:hidden">|</div>
+				<Link
 					href={"/logobranding"}
 					className={`${
 						screen === "logoBranding"
@@ -130,30 +155,6 @@ export default function Sidebar({ screen }: { screen: string }) {
 				</Link>
 				<div className="inline md:hidden">|</div>
 				<Link
-					href={"/artistWork"}
-					className={`${
-						screen === "artistWork" ? "text-[#ffc176]" : "hover:text-[#ffc176]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Artist Work
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/aboutMe"}
-					className={`${
-						screen === "aboutMe" ? "text-[#840032]" : "hover:text-[#840032]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					About Me
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
 					href={"/winona"}
 					className={`${
 						screen === "winona" ? "text-[#9072D8]" : "hover:text-[#9072D8]"
@@ -164,9 +165,25 @@ export default function Sidebar({ screen }: { screen: string }) {
 				>
 					Winona
 				</Link>
+				<div className="inline md:hidden">|</div>
+				<Link
+					href={"/aboutMe"}
+					className={`${
+						screen === "aboutMe" ? "text-[#CA352A]" : "hover:text-[#CA352A]"
+					}`}
+					onClick={() => {
+						setColor(currentBorderColor);
+					}}
+				>
+					About Me
+				</Link>
 			</div>
 			<div className="flex flex-col space-y-1 mb-5">
-				<Link href={"https://shop.lazardesigns.com"} className="bg-[#e35050] px-2 py-1 rounded-md text-white font-semibold w-full hover:transform hover:scale-105 transition-transform duration-200 mb-2 text-center font-florencesans" target="_blank">
+				<Link
+					href={"https://shop.lazardesigns.com"}
+					className="bg-[#e35050] px-2 py-1 rounded-md text-white font-semibold w-full hover:transform hover:scale-105 transition-transform duration-200 mb-2 text-center font-florencesans"
+					target="_blank"
+				>
 					My Shop
 				</Link>
 				<button

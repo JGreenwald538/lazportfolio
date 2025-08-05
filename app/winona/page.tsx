@@ -38,9 +38,9 @@ export default function WinonaPage() {
 							care for women aged 35 to 59. They provide science-backed,
 							personalized treatment through bioidentical hormone replacement
 							therapy (BHRT), delivered directly to patients’ homes. Winona
-							empowers women with a supportive online platform that includes
+							empowers women in over 35 states with a supportive online platform that includes
 							access to physicians, educational content, and a vibrant
-							community.
+							community of over 30,000 women.
 						</div>
 					</div>
 					<button
@@ -78,20 +78,20 @@ export default function WinonaPage() {
 									<h2 className="text-xl font-semibold">Pain Points</h2>
 									<ul className="list-disc list-inside space-y-1 text-xl">
 										<li>
-											Silence around menopause: Women often feel isolated,
+											<div className="font-semibold inline">Silence around menopause:</div> Women often feel isolated,
 											uninformed, or ignored by traditional healthcare systems.
 										</li>
 										<li>
-											Symptoms dismissed or misunderstood: Many providers
+											<div className="font-semibold inline">Symptoms dismissed or misunderstood:</div> Many providers
 											minimize the severity of menopause-related symptoms.
 										</li>
 										<li>
-											Embarrassment or denial: Women may not be ready to
+											<div className="font-semibold inline">Embarrassment or denial:</div> Women may not be ready to
 											acknowledge they&apos;re in menopause, making outreach
 											tricky.
 										</li>
 										<li>
-											Lack of trusted treatment: Skepticism around hormone
+											<div className="font-semibold inline">Lack of trusted treatment:</div> Skepticism around hormone
 											therapy and confusion due to outdated studies or
 											misinformation.
 										</li>
@@ -148,131 +148,6 @@ export default function WinonaPage() {
 						</div>
 					</div>
 				</FadeInSection>
-				{/* Section 3 – Favorite Designs */}
-				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
-					<div className="flex flex-col justify-center h-full space-y-8">
-						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
-							Winona Design Internship
-						</p>
-						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
-							Out of The Fog Campaign
-						</h1>
-						<div className="flex flex-row space-x-12">
-							<button
-								className="h-96 w-1/2 rounded-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona21.png");
-								}}
-								style={{
-									boxShadow:
-										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
-								}}
-							>
-								<Image
-									src="/Winona/winona21.png"
-									alt="Winona"
-									width={2000}
-									height={2000}
-									className="w-full h-full object-scale-down"
-								/>
-							</button>
-							<button
-								className="h-96 w-1/2 rounded-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona22.png");
-								}}
-								style={{
-									boxShadow:
-										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
-								}}
-							>
-								<Image
-									src="/Winona/winona22.png"
-									alt="Winona"
-									width={2000}
-									height={2000}
-									className="w-full h-full object-scale-down"
-								/>
-							</button>
-						</div>
-						<div className="flex w-full justify-center">
-							<div
-								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
-								style={{
-									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
-								}}
-							>
-								Two of my favorite designs from the “Let&apos;s Talk About It”
-								Campaign
-							</div>
-						</div>
-					</div>
-				</FadeInSection>
-
-				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
-					<div className="flex flex-col justify-center h-full space-y-8">
-						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
-							Winona Design Internship
-						</p>
-						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
-							Let&apos;s Talk About It Campaign
-						</h1>
-						<div className="flex flex-row space-x-12">
-							<button
-								className="h-96 w-1/2 rounded-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona3.png");
-								}}
-								style={{
-									boxShadow:
-										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
-								}}
-							>
-								<Image
-									src="/Winona/winona3.png"
-									alt="Winona"
-									width={2000}
-									height={2000}
-									className="w-full h-full object-scale-down"
-								/>
-							</button>
-							<button
-								className="h-96 w-1/2 rounded-xl"
-								onClick={() => {
-									setIsOpen(true);
-									setShownImage("winona4.png");
-								}}
-								style={{
-									boxShadow:
-										"0px 266px 107px rgba(0, 0, 0, 0.01), 0px 150px 90px rgba(0, 0, 0, 0.05), 0px 67px 67px rgba(0, 0, 0, 0.09), 0px 17px 37px rgba(0, 0, 0, 0.1)",
-								}}
-							>
-								<Image
-									src="/Winona/winona4.png"
-									alt="Winona"
-									width={2000}
-									height={2000}
-									className="w-full h-full object-scale-down"
-								/>
-							</button>
-						</div>
-						<div className="flex w-full justify-center">
-							<div
-								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
-								style={{
-									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
-								}}
-							>
-								Two of my favorite designs from the “Let&apos;s Talk About It”
-								Campaign
-							</div>
-						</div>
-					</div>
-				</FadeInSection>
-
 				{/* Section 4 – Campaigns */}
 				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
 					<div className="flex flex-row h-full">
@@ -364,6 +239,113 @@ export default function WinonaPage() {
 									className="w-full h-full object-fill rounded-xl"
 								/>
 							</button>
+						</div>
+					</div>
+				</FadeInSection>
+				{/* Section 3 – Favorite Designs */}
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+					<div className="flex flex-col justify-center h-full space-y-8">
+						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
+							Winona Design Internship
+						</p>
+						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
+							Out of The Fog Campaign
+						</h1>
+						<div className="flex flex-row space-x-12">
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona21.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona21.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona22.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona22.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+						</div>
+						<div className="flex w-full justify-center">
+							<div
+								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
+								style={{
+									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
+								}}
+							>
+								Two of my favorite designs from the “Out of the Fog” Campaign
+							</div>
+						</div>
+					</div>
+				</FadeInSection>
+
+				<FadeInSection className="min-h-screen bg-white text-[#312849] p-10 font-sans snap-center snap-always">
+					<div className="flex flex-col justify-center h-full space-y-8">
+						<p className="uppercase text-sm font-semibold tracking-wide text-gray-400 border-b-2 border-[#EEEEEE] w-1/2">
+							Winona Design Internship
+						</p>
+						<h1 className="text-6xl sm:text-7xl font-semibold mt-2">
+							Let&apos;s Talk About It Campaign
+						</h1>
+						<div className="flex flex-row space-x-12">
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona3.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona3.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+							<button
+								className="h-96 w-1/2 rounded-xl shadow-xl"
+								onClick={() => {
+									setIsOpen(true);
+									setShownImage("winona4.png");
+								}}
+							>
+								<Image
+									src="/Winona/winona4.png"
+									alt="Winona"
+									width={2000}
+									height={2000}
+									className="w-full h-full object-scale-down"
+								/>
+							</button>
+						</div>
+						<div className="flex w-full justify-center">
+							<div
+								className="text-center text-2xl bg-white py-4 px-4 rounded-xl"
+								style={{
+									boxShadow: "inset 0px 4px 11.9px 1px rgba(0, 0, 0, 0.25)",
+								}}
+							>
+								Two of my favorite designs from the “Let&apos;s Talk About It”
+								Campaign
+							</div>
 						</div>
 					</div>
 				</FadeInSection>

@@ -36,6 +36,16 @@ export default function Home() {
 		);
 	}
 
+	fullscreenPosters[images[0].source] = (
+		<FullscreenPosters
+			srcFolder="LogoBranding"
+			shownImage={[{source: images[0].source, description: undefined}, {source: images[1].source, description: undefined}, {source: images[2].source, description: undefined}]}
+			setIsOpen={setIsOpen}
+			description={images[0].description}
+			logoandBranding={true}
+		/>
+	);
+
 	for (const image in images) {
 		imagePosters.push(
 			<ImagePoster
@@ -71,7 +81,7 @@ export default function Home() {
 			<div className="flex flex-col w-full items-center">
 				<Header
 					name="Logo & Branding"
-					description="Concept designs for fictional companies and brands"
+					description="A collection of logo and branding projects from competitions and personal work. Each project is a unique representation of a brand's identity, with attention to detail and a focus on visual storytelling with use of Adobe products."
 				/>
 				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full h-fit my-8 md:mx-10 align-center md:px-8">
 					{imagePosters}
