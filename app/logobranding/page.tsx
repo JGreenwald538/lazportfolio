@@ -65,6 +65,7 @@ const images = [
 	],
 	[
 		{ source: "SigchiEnvyVert.png", description: undefined },
+		{ source: "SigchiEnvy.png", description: undefined },
 		{ source: "Envy beige-100.jpg", description: undefined },
 	],
 	[
