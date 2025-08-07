@@ -5,7 +5,6 @@ import ImagePoster from "../components/ImagePoster";
 import Sidebar from "../components/Sidebar";
 import FullscreenPosters from "../components/FullscreenPosters";
 import Header from "../components/Header";
-import { source } from "motion/react-client";
 
 const images = [
 	[
