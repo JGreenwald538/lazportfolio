@@ -42,7 +42,7 @@ export default function FullscreenPosters({
 				></button>
 				<div className="flex md:flex-row flex-col items-center justify-center md:space-x-10 space-y-6">
 					{description && (
-						<div className="px-3 py-4 h-fit md:w-1/4 w-1/2 md:text-2xl text-md bg-white/80 rounded-md flex flex-col text-black">
+						<div className="px-3 py-4 h-fit md:w-1/3 w-1/2 md:text-2xl text-md bg-white/80 rounded-md flex flex-col text-black">
 							{description}
 						</div>
 					)}
