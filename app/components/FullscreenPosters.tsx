@@ -7,11 +7,13 @@ export default function FullscreenPosters({
 	shownImage,
 	setIsOpen,
 	description,
+	logoandBranding
 }: {
 	srcFolder: string;
 	shownImage: string | { source: string; description: string | undefined }[];
 	setIsOpen: (arg0: boolean) => void;
 	description?: string;
+	logoandBranding?: boolean;
 }) {
 	const [currentImage, setCurrentImage] = useState(0);
 	const images = []
@@ -38,7 +40,12 @@ export default function FullscreenPosters({
 					}}
 					className="w-screen h-screen -z-10 bg-black/80 absolute top-0"
 				></button>
-				<div className="flex md:flex-row flex-col items-center justify-center">
+				<div className="flex md:flex-row flex-col items-center justify-center md:space-x-10 space-y-6">
+					{description && (
+						<div className="px-3 py-4 h-fit md:w-1/4 w-1/2 md:text-2xl text-md bg-white/80 rounded-md flex flex-col text-black">
+							{description}
+						</div>
+					)}
 					{typeof shownImage == "string" && (
 						<Image
 							src={"/" + srcFolder + "/" + shownImage}
@@ -48,24 +55,46 @@ export default function FullscreenPosters({
 							className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
 						/>
 					)}
+					{typeof shownImage === "object" &&
+						logoandBranding &&
+						currentImage > 0 && (
+							<button
+								className="w-12 left-12 md:bottom-auto bottom-44 "
+								onClick={() => {
+									setCurrentImage(currentImage - 1);
+								}}
+							>
+								<FaCircleChevronLeft size={30} />
+							</button>
+						)}
 					{typeof shownImage == "object" && images[currentImage]}
-					{description && (
-						<div className="p-2 h-fit md:w-1/4 w-1/2 md:ml-10 md:text-2xl md:mt-0 mt-10 text-md border-white rounded-md border-2 flex flex-col">
-							{description}
-						</div>
-					)}
+					{typeof shownImage === "object" &&
+						logoandBranding &&
+						currentImage < shownImage.length - 1 && (
+							<button
+								className="w-12 right-12 md:bottom-auto bottom-44"
+								onClick={() => {
+									setCurrentImage(currentImage + 1);
+								}}
+							>
+								<FaCircleChevronRight size={30} />
+							</button>
+						)}
 				</div>
-				{typeof shownImage === "object" && currentImage > 0 && (
-					<button
-						className="absolute w-12 left-12 md:bottom-auto bottom-44 "
-						onClick={() => {
-							setCurrentImage(currentImage - 1);
-						}}
-					>
-						<FaCircleChevronLeft size={30} />
-					</button>
-				)}
 				{typeof shownImage === "object" &&
+					!logoandBranding &&
+					currentImage > 0 && (
+						<button
+							className="absolute w-12 left-12 md:bottom-auto bottom-44 "
+							onClick={() => {
+								setCurrentImage(currentImage - 1);
+							}}
+						>
+							<FaCircleChevronLeft size={30} />
+						</button>
+					)}
+				{typeof shownImage === "object" &&
+					!logoandBranding &&
 					currentImage < shownImage.length - 1 && (
 						<button
 							className="absolute w-12 right-12 md:bottom-auto bottom-44"
