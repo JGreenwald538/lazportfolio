@@ -38,9 +38,9 @@ export default function WinonaPage() {
 							care for women aged 35 to 59. They provide science-backed,
 							personalized treatment through bioidentical hormone replacement
 							therapy (BHRT), delivered directly to patients’ homes. Winona
-							empowers women in over 35 states with a supportive online platform that includes
-							access to physicians, educational content, and a vibrant
-							community of over 30,000 women.
+							empowers women in over 35 states with a supportive online platform
+							that includes access to physicians, educational content, and a
+							vibrant community of over 30,000 women.
 						</div>
 					</div>
 					<button
@@ -78,22 +78,32 @@ export default function WinonaPage() {
 									<h2 className="text-xl font-semibold">Pain Points</h2>
 									<ul className="list-disc list-inside space-y-1 text-xl">
 										<li>
-											<div className="font-semibold inline">Silence around menopause:</div> Women often feel isolated,
-											uninformed, or ignored by traditional healthcare systems.
+											<div className="font-semibold inline">
+												Silence around menopause:
+											</div>{" "}
+											Women often feel isolated, uninformed, or ignored by
+											traditional healthcare systems.
 										</li>
 										<li>
-											<div className="font-semibold inline">Symptoms dismissed or misunderstood:</div> Many providers
-											minimize the severity of menopause-related symptoms.
+											<div className="font-semibold inline">
+												Symptoms dismissed or misunderstood:
+											</div>{" "}
+											Many providers minimize the severity of menopause-related
+											symptoms.
 										</li>
 										<li>
-											<div className="font-semibold inline">Embarrassment or denial:</div> Women may not be ready to
-											acknowledge they&apos;re in menopause, making outreach
-											tricky.
+											<div className="font-semibold inline">
+												Embarrassment or denial:
+											</div>{" "}
+											Women may not be ready to acknowledge they&apos;re in
+											menopause, making outreach tricky.
 										</li>
 										<li>
-											<div className="font-semibold inline">Lack of trusted treatment:</div> Skepticism around hormone
-											therapy and confusion due to outdated studies or
-											misinformation.
+											<div className="font-semibold inline">
+												Lack of trusted treatment:
+											</div>{" "}
+											Skepticism around hormone therapy and confusion due to
+											outdated studies or misinformation.
 										</li>
 									</ul>
 								</div>
@@ -451,10 +461,13 @@ export default function WinonaPage() {
 								</h1>
 
 								<p className="text-3xl mt-6 font-helvetica text-[#52575E] font-light">
-									These final designs from the campaigns helped me understand
-									what ads would reach certain women who need Winona the most. I
-									learned a lot about different forms of social media ads and
-									how to incorporate certain elements into my designs. Enjoy!
+									These final designs helped me better understand how to create
+									ads that resonate with women navigating menopause, especially
+									those who feel unseen or misguided. Through this project, I
+									learned how to translate brand values into thoughtful visual
+									storytelling across different ad formats. I’m proud of what
+									I’ve built here, and I’m excited to carry these insights into
+									future work.
 								</p>
 							</div>
 
