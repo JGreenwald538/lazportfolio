@@ -32,17 +32,22 @@ export default function FullscreenPosters({
 	}
 	
 	return (
-		<div className="absolute">
+		<button
+			className="absolute"
+			onClick={() => {
+				setIsOpen(false);
+			}}
+		>
 			<div className="fixed w-screen h-screen px-24 py-10 top-0 z-20 flex items-center justify-center">
-				<button
-					onClick={() => {
-						setIsOpen(false);
-					}}
-					className="w-screen h-screen -z-10 bg-black/80 absolute top-0"
-				></button>
+				<button className="w-screen h-screen -z-10 bg-black/80 absolute top-0"></button>
 				<div className="flex md:flex-row flex-col items-center justify-center md:space-x-10 space-y-6">
 					{description && (
-						<div className="px-3 py-4 h-fit md:w-1/3 w-1/2 md:text-2xl text-md bg-white/80 rounded-md flex flex-col text-black">
+						<div
+							className="px-3 py-4 h-fit md:w-1/3 w-1/2 md:text-2xl text-md bg-white/80 rounded-md flex flex-col text-black"
+							onClick={(e) => {
+								e.stopPropagation();
+							}}
+						>
 							{description}
 						</div>
 					)}
@@ -53,6 +58,9 @@ export default function FullscreenPosters({
 							width={3000}
 							height={3000}
 							className="max-h-[90vw] max-w-[70vh] rounded-xl object-scale-down"
+							onClick={(e) => {
+								e.stopPropagation();
+							}}
 						/>
 					)}
 					{typeof shownImage === "object" &&
@@ -60,7 +68,8 @@ export default function FullscreenPosters({
 						currentImage > 0 && (
 							<button
 								className="w-12 left-12 md:bottom-auto bottom-44 "
-								onClick={() => {
+								onClick={(e) => {
+									e.stopPropagation();
 									setCurrentImage(currentImage - 1);
 								}}
 							>
@@ -73,7 +82,8 @@ export default function FullscreenPosters({
 						currentImage < shownImage.length - 1 && (
 							<button
 								className="w-12 right-12 md:bottom-auto bottom-44"
-								onClick={() => {
+								onClick={(e) => {
+									e.stopPropagation();
 									setCurrentImage(currentImage + 1);
 								}}
 							>
@@ -86,7 +96,8 @@ export default function FullscreenPosters({
 					currentImage > 0 && (
 						<button
 							className="absolute w-12 left-12 md:bottom-auto bottom-44 "
-							onClick={() => {
+							onClick={(e) => {
+								e.stopPropagation();
 								setCurrentImage(currentImage - 1);
 							}}
 						>
@@ -98,7 +109,8 @@ export default function FullscreenPosters({
 					currentImage < shownImage.length - 1 && (
 						<button
 							className="absolute w-12 right-12 md:bottom-auto bottom-44"
-							onClick={() => {
+							onClick={(e) => {
+								e.stopPropagation();
 								setCurrentImage(currentImage + 1);
 							}}
 						>
@@ -106,6 +118,6 @@ export default function FullscreenPosters({
 						</button>
 					)}
 			</div>
-		</div>
+		</button>
 	);
 }

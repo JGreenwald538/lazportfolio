@@ -25,6 +25,7 @@ const images = [
 	"Dswingers.mockup.jpg",
 	"EPressure.Vinyl.jpg",
 	"Fbrownboy.ig.1.jpg",
+	[{ source: "ENVY_INLUV_BETA.png", description: "Poster design for envy" }],
 ];
 
 export default function Home() {
@@ -48,7 +49,7 @@ export default function Home() {
 						setShownImage(images[image]);
 					}}
 					srcFolder="ArtistWork"
-				></ImagePoster>
+				></ImagePoster>,
 			);
 		} else {
 			imagePosters.push(
@@ -64,7 +65,7 @@ export default function Home() {
 						setShownImage(images[image]);
 					}}
 					srcFolder="ArtistWork"
-				></ImagePoster>
+				></ImagePoster>,
 			);
 		}
 	}
@@ -85,7 +86,6 @@ export default function Home() {
 			<Sidebar screen="artistWork" />
 			<div className="flex flex-col max-w-full">
 				<div className="flex flex-col max-w-full items-center">
-					
 					<Header
 						name="Artist Work"
 						description="A collection of client and personal projects. In a perfect world, my personal designs will be used by the artists themselves."
@@ -99,6 +99,7 @@ export default function Home() {
 						srcFolder="ArtistWork"
 						shownImage={shownImage}
 						setIsOpen={setIsOpen}
+						description={typeof shownImage === "object" ? shownImage[0].description : undefined}
 					/>
 				)}
 			</div>

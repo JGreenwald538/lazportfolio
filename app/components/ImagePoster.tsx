@@ -27,7 +27,7 @@ export default function Home({
 				{typeof imageSource === "object" && (
 					<>
 						{/* Shadow Image */}
-						<Image
+						{imageSource.length > 1 && <Image
 							src={
 								`/${srcFolder}/${imageSource[1].source}` || "/typography.png"
 							}
@@ -35,7 +35,7 @@ export default function Home({
 							width={300}
 							height={300}
 							className="w-fit h-full object-scale-down absolute top-0 left-0 opacity-30 rounded-md translate-x-4 translate-y-4"
-						/>
+						/>}
 						{/* Main Image */}
 						<Image
 							src={
