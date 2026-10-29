@@ -7,6 +7,7 @@ import FullscreenPosters from "../components/FullscreenPosters";
 import Header from "../components/Header";
 
 const images = [
+	"Lendinghand1.png",
 	"bad.pollen.04.jpg",
 	"geico.car.ad.03.jpg",
 	"look.both.ways.jpg",
@@ -32,6 +33,12 @@ const images = [
 		{ source: "walk.the.walk.2.jpg", description: undefined },
 	],
 	"yellowstone.simple2.jpg",
+	"GASinnerMonte4.png",
+	"LAPlasticTrees2.png",
+	"Stayinlane1.png",
+	"WeekendMaster3.png",
+	"fridayjuly10.35.png",
+	"seeing.believing2.png",
 ];
 
 export default function Home() {

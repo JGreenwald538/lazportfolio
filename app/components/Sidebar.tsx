@@ -6,7 +6,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import useColor from "../use-color";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const borderClasses: { [key: string]: string } = {
 	artistWork: "#ffc176",
@@ -16,7 +16,23 @@ const borderClasses: { [key: string]: string } = {
 	aboutMe: "#CA352A",
 	winona: "#9072D8",
 	mockups: "#4FCCC9",
+	home: "#F5F5F5",
+	journal: "#E8D44D",
+	contact: "#FF7A59",
 };
+
+const navLinks = [
+	{ href: "/", label: "Home", screen: "home" },
+	{ href: "/albumCovers", label: "Album Covers", screen: "albumcovers" },
+	{ href: "/posters", label: "Posters", screen: "posters" },
+	{ href: "/artistWork", label: "Artist Work", screen: "artistWork" },
+	{ href: "/mockups", label: "Clothing and Mockups", screen: "mockups" },
+	{ href: "/logobranding", label: "Logo & Branding", screen: "logoBranding" },
+	{ href: "/winona", label: "Winona", screen: "winona" },
+	{ href: "/journal", label: "Behind the Designs", screen: "journal" },
+	{ href: "/aboutMe", label: "About Me", screen: "aboutMe" },
+	{ href: "/contact", label: "Contact", screen: "contact" },
+];
 
 export default function Sidebar({ screen }: { screen: string }) {
 	const currentBorderColor = borderClasses[screen] || "gray";
@@ -77,7 +93,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 			<div className="flex md:flex-col flex-row mb-4 md:items-start items-center font-medium">
 				<Link
 					className="rounded-full border-white #border-2 w-15 h-15 flex justify-center items-center mt-5"
-					href={"/aboutMe"}
+					href={"/"}
 					onClick={() => {
 						setColor(currentBorderColor);
 					}}
@@ -91,94 +107,35 @@ export default function Sidebar({ screen }: { screen: string }) {
 					Racusin
 				</div>
 			</div>
-			<div className="md:grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
-				<Link
-					href={"/"}
-					className={`${
-						screen === "albumcovers" ? "text-[#ACD2ED]" : "hover:text-[#ACD2ED]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Album Covers
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/posters"}
-					className={`${
-						screen === "posters" ? "text-[#466995]" : "hover:text-[#466995]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Posters
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/artistWork"}
-					className={`${
-						screen === "artistWork" ? "text-[#ffc176]" : "hover:text-[#ffc176]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Artist Work
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/mockups"}
-					className={`${
-						screen === "mockups" ? "text-[#4FCCC9]" : "hover:text-[#4FCCC9]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Clothing and Mockups
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/logobranding"}
-					className={`${
-						screen === "logoBranding"
-							? "text-[#4C9459]"
-							: "hover:text-[#4C9459]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Logo & Branding
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/winona"}
-					className={`${
-						screen === "winona" ? "text-[#9072D8]" : "hover:text-[#9072D8]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					Winona
-				</Link>
-				<div className="inline md:hidden">|</div>
-				<Link
-					href={"/aboutMe"}
-					className={`${
-						screen === "aboutMe" ? "text-[#CA352A]" : "hover:text-[#CA352A]"
-					}`}
-					onClick={() => {
-						setColor(currentBorderColor);
-					}}
-				>
-					About Me
-				</Link>
-			</div>
+			<nav className="md:grow md:flex md:flex-col flex-row justify-center md:items-start items-center w-full md:space-y-2 md:space-x-0 space-x-2 min-w-fit md:whitespace-nowrap whitespace-pre-wrap">
+				{navLinks.map((link, index) => (
+					<Fragment key={link.screen}>
+						{index > 0 && <div className="inline md:hidden">|</div>}
+						<Link
+							href={link.href}
+							style={{ "--accent": borderClasses[link.screen] } as React.CSSProperties}
+							className={
+								screen === link.screen ? "text-(--accent)" : "hover:text-(--accent)"
+							}
+							onClick={() => {
+								setColor(currentBorderColor);
+							}}
+						>
+							{link.label}
+						</Link>
+					</Fragment>
+				))}
+			</nav>
 			<div className="flex flex-col space-y-1 mb-5">
+				<Link
+					href={"/contact"}
+					className="bg-white px-2 py-1 rounded-md text-slate-950 font-semibold w-full hover:transform hover:scale-105 transition-transform duration-200 mb-2 text-center"
+					onClick={() => {
+						setColor(currentBorderColor);
+					}}
+				>
+					Work With Me
+				</Link>
 				<Link
 					href={"https://shop.lazardesigns.com"}
 					className="bg-[#e35050] px-2 py-1 rounded-md text-white font-semibold w-full hover:transform hover:scale-105 transition-transform duration-200 mb-2 text-center font-florencesans"
