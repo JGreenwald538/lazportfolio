@@ -11,7 +11,7 @@
   "dependencies": {
     "fontkit": "^2.0.4",
     "motion": "^12.0.6",
-    "next": "15.0.3",
+    "next": "^15.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.5",
@@ -24,7 +24,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "^15.0.8",
     "postcss": "^8",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
