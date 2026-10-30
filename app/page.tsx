@@ -6,10 +6,6 @@ import { FaChevronDown } from "react-icons/fa";
 import FadeInSection from "./components/FadeInComponent";
 import { featuredProjects } from "./data/featured";
 
-const stats = [
-	{ value: "$2M+", label: "in monthly ad spend supported at Winona" },
-];
-
 export default function Home() {
 	return (
 		<div className="flex md:flex-row flex-col">
@@ -79,22 +75,6 @@ export default function Home() {
 									</div>
 								</Link>
 							</FadeInSection>
-						))}
-					</div>
-				</section>
-
-				<section className="px-6 md:px-16 pb-16">
-					<div className="grid grid-cols-1 gap-6 max-w-md">
-						{stats.map((stat) => (
-							<div
-								key={stat.value}
-								className="rounded-lg bg-white/5 p-6 flex flex-col"
-							>
-								<div className="font-outfit font-bold text-4xl">
-									{stat.value}
-								</div>
-								<div className="mt-1 text-white/70">{stat.label}</div>
-							</div>
 						))}
 					</div>
 				</section>

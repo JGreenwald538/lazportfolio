@@ -135,6 +135,11 @@ export const featuredProjects: FeaturedProject[] = [
 				file: "Artboard.8.3insta.jpg",
 				alt: "Urban Bites mockups",
 			},
+			{
+				folder: "LogoBranding",
+				file: "urban.bites.poster.jpg",
+				alt: "Urban Bites poster",
+			},
 		],
 	},
 ];
