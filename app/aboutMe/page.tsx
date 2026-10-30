@@ -141,7 +141,7 @@ export default function Home() {
 						{`Music has been part of my life for as long as I can remember, and it's what pulled me into design. In 2020 I started LazarDesigns, a freelance business to showcase my client and personal projects. I began by creating posters for local events and grew into designing album covers for verified artists, collaborating on everything from rap to rock.`}
 					</p>
 					<p className="mt-4 text-lg text-white/85">
-						{`Translating the feeling of a song into a visual shaped my style: bold type, strong concepts, and details that reward a second look. My internships at Winona added the marketing side, showing me how creative decisions show up in engagement and conversion data.`}
+						{`Translating the feeling of a song into a visual shaped my style: bold type, strong concepts and a vintage feel. My internships at Winona added the marketing side, showing me how creative decisions show up in engagement and conversion data.`}
 					</p>
 				</section>
 

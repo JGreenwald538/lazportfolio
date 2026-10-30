@@ -161,12 +161,6 @@ export default function Sidebar({ screen }: { screen: string }) {
 					<FaInstagram />
 					<div className="ml-1">@lazardesigns_</div>
 				</Link>
-				<Link
-					href={"https://www.linkedin.com/in/jackgreenwald/"}
-					target="_blank"
-				>
-					<div>Made By Jack Greenwald</div>
-				</Link>
 			</div>
 		</motion.div>
 	);

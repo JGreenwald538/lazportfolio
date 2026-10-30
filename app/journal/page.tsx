@@ -31,7 +31,6 @@ function Figure({
 	);
 }
 
-// TODO: Laz, read through and adjust any details so the story is fully accurate.
 export default function Journal() {
 	return (
 		<div className="flex md:flex-row flex-col">
@@ -47,7 +46,7 @@ export default function Journal() {
 					<div className="mt-3 text-sm text-white/60">By Lazar Racusin</div>
 
 					<p className="mt-8">
-						{`Before I ever opened Photoshop, I was listening. Music has been the soundtrack to almost everything I've done, and at some point I stopped just hearing songs and started seeing them. A heavy bassline felt like a dark, saturated color. A soft vocal felt like open space and thin type. I didn't know it yet, but that habit of translating sound into images would become the core of how I design.`}
+						{`Music has been in the background to almost everything I've done. I didn't know it yet, but that habit of translating sound into images would become the core of how I design.`}
 					</p>
 
 					<p className="mt-4">
@@ -64,10 +63,10 @@ export default function Journal() {
 						Designing what a song feels like
 					</h2>
 					<p>
-						{`Working with an artist always starts the same way: I listen to the project over and over before I sketch anything. I'm listening for the mood, the story, and the one detail that could anchor a whole visual identity. Then I make a lot of variations, because the first idea is rarely the best one.`}
+						{`Working with an artist always starts the same way with me listening to the project/song before I draft anything out. I'm listening for the mood and the one detail that could anchor a whole visual identity. For personal work, I am already listening to the album/artist and I decide to make a design based off of it. Then I make a lot of variations, because the first idea is rarely the best one.`}
 					</p>
 					<p className="mt-4">
-						{`My Shine poster with the producer and DJ envy is the best example. Referencing The Shining wasn't the plan at the start. But as I worked through version after version, the film's iconic carpet pattern kept matching the energy of the music, so I leaned into it until it became the center of the poster. That piece ended up printed around the RIT and Syracuse campuses and shared across social media.`}
+						{`My Shine poster with the producer and DJ envy is the best example. Referencing The Shining wasn't meant to be the focal point, but as I worked through versions, the film's iconic carpet pattern kept matching the energy of the music, so I leaned into it until it became the center of the poster. That piece ended up printed around the RIT and Syracuse campuses and shared across social media.`}
 					</p>
 
 					<Figure
@@ -94,7 +93,7 @@ export default function Journal() {
 						What music taught me about work
 					</h2>
 					<p>
-						{`Designing for musicians made me a better collaborator. Every artist has a vision that's personal to them, and my job is to listen closely, ask the right questions, and turn something they feel into something people can see. It taught me initiative too. Nobody hands you clients when you're starting out, so I built LazarDesigns one project at a time, and it now includes over 20 of them.`}
+						{`Designing for musicians made me a better collaborator. Every artist has a vision that's personal to them, and my job is to listen closely, ask the right questions, and turn something they feel into something people can see. It taught me initiative too. Nobody hands you clients when you're starting out, so I built LazarDesigns to expand my networks and creativity.`}
 					</p>
 					<p className="mt-4">
 						{`Those same habits carried into my internships at Winona, where I learned that good creative isn't just about looking great. It has to communicate a clear message and perform. Whether I'm designing an album cover or a paid social ad, I bring the same creativity, attention to detail, and focus on the audience.`}

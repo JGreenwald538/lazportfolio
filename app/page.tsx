@@ -2,12 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Sidebar from "./components/Sidebar";
 import CtaLink from "./components/CtaLink";
+import { FaChevronDown } from "react-icons/fa";
 import FadeInSection from "./components/FadeInComponent";
 import { featuredProjects } from "./data/featured";
 
 const stats = [
-	{ value: "20+", label: "freelance projects through LazarDesigns" },
-	{ value: "27", label: "film festival wins for a trailer campaign I promoted" },
 	{ value: "$2M+", label: "in monthly ad spend supported at Winona" },
 ];
 
@@ -16,15 +15,15 @@ export default function Home() {
 		<div className="flex md:flex-row flex-col">
 			<Sidebar screen="home" />
 			<main className="flex flex-col w-full">
-				<section className="md:min-h-[85vh] flex flex-col justify-center px-6 md:px-16 py-12 max-w-5xl">
+				<section className="relative md:min-h-[85vh] flex flex-col justify-center px-6 md:px-16 py-12">
 					<div className="font-outfit uppercase tracking-widest text-sm text-white/60 mb-4">
 						Graphic Designer · Creative Marketer · RIT Advertising & PR
 					</div>
-					<h1 className="font-outfit font-bold text-4xl md:text-6xl leading-tight text-balance">
+					<h1 className="font-outfit font-bold text-4xl md:text-6xl leading-tight text-balance max-w-4xl">
 						Design that makes music, brands, and ideas impossible to ignore.
 					</h1>
 					<p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
-						{`I'm Lazar Racusin, a designer who creates album covers, posters, and brand identities that turn an idea into something people remember. I'm looking to work with artists, brands, and marketing teams who want creative that connects with their audience and drives results.`}
+						{`I'm Lazar Racusin, a designer who creates album covers, posters, and brand identities that turn an idea into something people remember with 20+ projects under my belt. I'm looking to work with brands, artists, and marketing teams who want creative that connects with their audience and drives results.`}
 					</p>
 					<div className="mt-8 flex flex-wrap gap-4">
 						<CtaLink href="/albumCovers">View My Portfolio</CtaLink>
@@ -32,9 +31,16 @@ export default function Home() {
 							Work With Me
 						</CtaLink>
 					</div>
+					<a
+						href="#featured-heading"
+						aria-label="Scroll to featured work"
+						className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/80 transition-colors animate-bounce md:block hidden"
+					>
+						<FaChevronDown size={28} />
+					</a>
 				</section>
 
-				<section className="px-6 md:px-16 pb-16" aria-labelledby="featured-heading">
+				<section className="px-6 md:px-16 pb-16 scroll-mt-8" aria-labelledby="featured-heading">
 					<h2
 						id="featured-heading"
 						className="font-outfit font-semibold text-3xl mb-8"
@@ -78,7 +84,7 @@ export default function Home() {
 				</section>
 
 				<section className="px-6 md:px-16 pb-16">
-					<div className="grid md:grid-cols-3 grid-cols-1 gap-6">
+					<div className="grid grid-cols-1 gap-6 max-w-md">
 						{stats.map((stat) => (
 							<div
 								key={stat.value}
