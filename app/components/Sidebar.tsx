@@ -98,7 +98,7 @@ export default function Sidebar({ screen }: { screen: string }) {
 						setColor(currentBorderColor);
 					}}
 				>
-					<Image src={"/logo.png"} alt={"Logo"} width={4000} height={4000} />
+					<Image src={"/LDLogoRevise2-trim.png"} alt={"LazarDesigns logo"} width={400} height={400} className="object-contain" />
 				</Link>
 				<div className="text-xl md:ml-0 ml-2 md:mt-2 mt-5 font-bold font-outfit">
 					Lazar
