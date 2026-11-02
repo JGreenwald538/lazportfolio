@@ -26,6 +26,11 @@ const images = [
 	"EPressure.Vinyl.jpg",
 	"Fbrownboy.ig.1.jpg",
 	[{ source: "ENVY_INLUV_BETA.png", description: "Poster design for envy" }],
+	"ARRingRingRed3.png",
+	"BAmickjagger5.png",
+	"FAKendrick.shirt1.png",
+	"FBAOzzyTribute3.png",
+	"heroandv.1.jpg",
 ];
 
 export default function Home() {
