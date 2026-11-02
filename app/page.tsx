@@ -16,7 +16,7 @@ export default function Home() {
 						Graphic Designer · Creative Marketer · RIT Advertising & PR
 					</div>
 					<h1 className="font-outfit font-bold text-4xl md:text-6xl leading-tight text-balance max-w-4xl">
-						Design that makes music, brands, and ideas impossible to ignore.
+						Welcome to my portfolio
 					</h1>
 					<p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
 						{`I'm Lazar Racusin, a designer who creates album covers, posters, and brand identities that turn an idea into something people remember with 20+ projects under my belt. I'm looking to work with brands, artists, and marketing teams who want creative that connects with their audience and drives results.`}
